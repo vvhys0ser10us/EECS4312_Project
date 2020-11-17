@@ -1,3 +1,5 @@
+import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -5,7 +7,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class login {
+public class officerLogin {
 
 	private JFrame frame;
 	private JTextField uname;
@@ -14,32 +16,23 @@ public class login {
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					login window = new login();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-	
-	public void run() {
-		try {
-			login window = new login();
-			window.frame.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					officerLogin window = new officerLogin();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	/**
 	 * Create the application.
 	 */
-	public login() {
+	public officerLogin() {
 		initialize();
 	}
 
@@ -48,10 +41,10 @@ public class login {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 300);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setTitle("customer_login");
+		frame.setTitle("officer_login");
 		JLabel username = new JLabel("Username");
 		username.setBounds(49, 81, 100, 16);
 		frame.getContentPane().add(username);
@@ -75,19 +68,18 @@ public class login {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnLogin.setBounds(165, 195, 117, 29);
+		btnLogin.setBounds(71, 193, 117, 29);
 		frame.getContentPane().add(btnLogin);
 		
-		JButton btnBack = new JButton("Back");
-		btnBack.addActionListener(new ActionListener() {
+		JButton btnRegister = new JButton("Register");
+		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				welcome a = new welcome();
 				frame.dispose();
+				officerReg a = new officerReg();
 				a.run();
-				
 			}
 		});
-		btnBack.setBounds(6, 6, 117, 29);
-		frame.getContentPane().add(btnBack);
+		btnRegister.setBounds(243, 193, 117, 29);
+		frame.getContentPane().add(btnRegister);
 	}
 }

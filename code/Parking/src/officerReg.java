@@ -2,10 +2,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class RegisterForm {
+public class officerReg {
 
 	private JFrame frame;
 	private JTextField fistename;
@@ -29,13 +27,13 @@ public class RegisterForm {
 
 	public void run() {
 	try {
-		RegisterForm window = new RegisterForm();
+		officerReg window = new officerReg();
 		window.frame.setVisible(true);
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 	}
-	public RegisterForm() {
+	public officerReg() {
 		initialize();
 	}
 
@@ -44,7 +42,7 @@ public class RegisterForm {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("custmoer_register");
+		frame.setTitle("officer_register");
 		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -88,17 +86,6 @@ public class RegisterForm {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.setBounds(166, 372, 117, 29);
 		frame.getContentPane().add(btnConfirm);
-		
-		JButton btnBack = new JButton("Back");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				welcome a = new welcome();
-				frame.dispose();
-				a.run();
-			}
-		});
-		btnBack.setBounds(7, 6, 117, 29);
-		frame.getContentPane().add(btnBack);
 	}
 
 }
