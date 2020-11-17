@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 public class RegisterForm {
 
 	private JFrame frame;
-	private JTextField fistename;
+	private JTextField firstname;
 	private JTextField lastname;
 	private JTextField email;
 	private JTextField password;
@@ -44,6 +44,7 @@ public class RegisterForm {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+
 		frame.setTitle("custmoer_register");
 		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,10 +66,10 @@ public class RegisterForm {
 		lblNewLabel_3.setBounds(63, 294, 61, 16);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		fistename = new JTextField();
-		fistename.setBounds(255, 100, 130, 26);
-		frame.getContentPane().add(fistename);
-		fistename.setColumns(10);
+		firstname = new JTextField();
+		firstname.setBounds(255, 100, 130, 26);
+		frame.getContentPane().add(firstname);
+		firstname.setColumns(10);
 		
 		lastname = new JTextField();
 		lastname.setBounds(255, 157, 130, 26);
@@ -86,6 +87,16 @@ public class RegisterForm {
 		password.setColumns(10);
 		
 		JButton btnConfirm = new JButton("confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				userAccount newCust = new userAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
+				userDB a = new userDB();
+				a.register(newCust);
+				frame.dispose();
+				login b = new login();
+				b.run();
+			}
+		});
 		btnConfirm.setBounds(166, 372, 117, 29);
 		frame.getContentPane().add(btnConfirm);
 		

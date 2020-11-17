@@ -1,5 +1,3 @@
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -16,17 +14,26 @@ public class officerLogin {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					officerLogin window = new officerLogin();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					officerLogin window = new officerLogin();
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+//	
+	public void run() {
+		try {
+			officerLogin window = new officerLogin();
+			window.frame.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -41,8 +48,8 @@ public class officerLogin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setBounds(900, 500, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("officer_login");
 		JLabel username = new JLabel("Username");
@@ -81,5 +88,27 @@ public class officerLogin {
 		});
 		btnRegister.setBounds(243, 193, 117, 29);
 		frame.getContentPane().add(btnRegister);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				welcome a = new welcome();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnBack.setBounds(6, 6, 117, 29);
+		frame.getContentPane().add(btnBack);
+		
+		JButton btnAdmin = new JButton("Admin");
+		btnAdmin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Admin a = new Admin();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnAdmin.setBounds(327, 6, 117, 29);
+		frame.getContentPane().add(btnAdmin);
 	}
 }

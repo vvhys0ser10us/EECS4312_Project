@@ -49,7 +49,7 @@ public class login {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(900, 500, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("customer_login");
 		JLabel username = new JLabel("Username");
@@ -73,6 +73,8 @@ public class login {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				userDB a= new userDB();
+				System.out.println(a.login(uname.getText(), psd.getText()));
 			}
 		});
 		btnLogin.setBounds(165, 195, 117, 29);

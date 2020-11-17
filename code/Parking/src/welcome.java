@@ -49,7 +49,7 @@ public class welcome {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(900, 500, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btncustomer = new JButton("Sign In");
@@ -74,5 +74,16 @@ public class welcome {
 		});
 		btnNewCustomer.setBounds(269, 179, 117, 29);
 		frame.getContentPane().add(btnNewCustomer);
+		
+		JButton btnOfficer = new JButton("I am an Officer");
+		btnOfficer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				officerLogin a = new officerLogin();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnOfficer.setBounds(269, 17, 117, 29);
+		frame.getContentPane().add(btnOfficer);
 	}
 }

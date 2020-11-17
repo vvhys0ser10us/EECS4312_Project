@@ -2,6 +2,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class officerReg {
 
@@ -86,6 +88,17 @@ public class officerReg {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.setBounds(166, 372, 117, 29);
 		frame.getContentPane().add(btnConfirm);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				officerLogin a = new officerLogin();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnBack.setBounds(6, 6, 117, 29);
+		frame.getContentPane().add(btnBack);
 	}
 
 }
