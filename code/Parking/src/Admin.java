@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Admin {
-
+	private adminDB admin;
 	private JFrame frame;
 	private JTextField username;
 	private JTextField password;
@@ -24,6 +24,7 @@ public class Admin {
 	public void run() {
 	try {
 		Admin window = new Admin();
+
 		window.frame.setVisible(true);
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -33,6 +34,7 @@ public class Admin {
 	 * Create the application.
 	 */
 	public Admin() {
+		admin = new adminDB();
 		initialize();
 	}
 
@@ -55,6 +57,13 @@ public class Admin {
 		username.setColumns(10);
 		
 		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				System.out.println(admin.check(username.getText(), password.getText()));
+				
+			}
+		});
 		btnConfirm.setBounds(162, 178, 117, 29);
 		frame.getContentPane().add(btnConfirm);
 		
