@@ -1,9 +1,9 @@
-import java.util.ArrayList;
 
 
 
 
 public class userDB {
+	
 
 public userDB() {
 	}
@@ -16,13 +16,14 @@ public void register(userAccount account) {
 	}
 	System.out.println(welcome.db);
 }
-public void delete(userAccount account) {
-	if (welcome.db.contains(account)) welcome.db.remove(account);
+public void delete(String email) {
+	for (int i =0;i < welcome.db.size();i++) {
+		if (welcome.db.get(i).getEmail().equals(email)) welcome.db.remove(i);
+	}
 }
 public boolean login(String email,String psd) {
 	for (int i=0;i < welcome.db.size();i++) {
 		if (welcome.db.get(i).getEmail().equals(email) && welcome.db.get(i).getPassword().equals(psd)) return true;
-		
 	}
 	return false;
 }

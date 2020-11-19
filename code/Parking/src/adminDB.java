@@ -17,4 +17,5 @@ public boolean check(String username,String password) {
 	if (admin.containsKey(username) && admin.get(username).equals(password)) return true;
 	else return false;
 }
+
 }

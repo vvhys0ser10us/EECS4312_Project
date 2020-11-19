@@ -10,6 +10,8 @@ public class welcome {
 
 	private JFrame frame;
 	public static ArrayList<userAccount> db = new ArrayList<>();
+	public static ArrayList<officerAccount> officer = new ArrayList<>();
+	public static ArrayList<String> officerlist = new ArrayList<>();
 	/**
 	 * Launch the application.
 	 */
