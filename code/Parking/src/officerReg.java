@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -8,7 +9,7 @@ import java.awt.event.ActionEvent;
 public class officerReg {
 
 	private JFrame frame;
-	private JTextField fistename;
+	private JTextField firstname;
 	private JTextField lastname;
 	private JTextField email;
 	private JTextField password;
@@ -65,10 +66,10 @@ public class officerReg {
 		lblNewLabel_3.setBounds(63, 294, 61, 16);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		fistename = new JTextField();
-		fistename.setBounds(255, 100, 130, 26);
-		frame.getContentPane().add(fistename);
-		fistename.setColumns(10);
+		firstname = new JTextField();
+		firstname.setBounds(255, 100, 130, 26);
+		frame.getContentPane().add(firstname);
+		firstname.setColumns(10);
 		
 		lastname = new JTextField();
 		lastname.setBounds(255, 157, 130, 26);
@@ -86,6 +87,21 @@ public class officerReg {
 		password.setColumns(10);
 		
 		JButton btnConfirm = new JButton("confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (welcome.officerlist.contains(email.getText())) {
+				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
+				officerDB a = new officerDB();
+				a.register(newOff);
+				frame.dispose();
+				login b = new login();
+				b.run();
+				JOptionPane.showMessageDialog(null, "Done");
+				}
+				else JOptionPane.showMessageDialog(null, "fail");
+				System.out.println(welcome.officerlist);
+			}
+		});
 		btnConfirm.setBounds(166, 372, 117, 29);
 		frame.getContentPane().add(btnConfirm);
 		

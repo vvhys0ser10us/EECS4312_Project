@@ -48,7 +48,7 @@ public class adminIn {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(900, 500, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -66,8 +66,14 @@ public class adminIn {
 			public void actionPerformed(ActionEvent e) {
 				if (email.getText().isBlank()) JOptionPane.showMessageDialog(null, "email cannot be empty");
 				else {
-					welcome.officerlist.add(email.getText());
-					JOptionPane.showMessageDialog(null, "Done");
+					if (!welcome.officerlist.contains(email.getText())) {
+						welcome.officerlist.add(email.getText());
+						JOptionPane.showMessageDialog(null, "Done");
+					}
+					else {
+						JOptionPane.showMessageDialog(null, "Officer already added");
+						
+					}
 					frame.dispose();
 					run();
 					System.out.println(welcome.officerlist);

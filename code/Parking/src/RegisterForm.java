@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -95,6 +96,8 @@ public class RegisterForm {
 				frame.dispose();
 				login b = new login();
 				b.run();
+				JOptionPane.showMessageDialog(null, "Done");
+
 			}
 		});
 		btnConfirm.setBounds(166, 372, 117, 29);
