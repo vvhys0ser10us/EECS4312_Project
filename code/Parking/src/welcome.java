@@ -21,6 +21,8 @@ public class welcome {
 				try {
 					welcome window = new welcome();
 					window.frame.setVisible(true);
+					welcome.officerlist.add("1111");
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

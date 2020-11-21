@@ -12,22 +12,23 @@ public class adminIn {
 
 	private JFrame frame;
 	private JTextField email;
-	//test
+
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					adminIn window = new adminIn();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					adminIn window = new adminIn();
+//					window.frame.setVisible(true);
+//					welcome.officerlist.add("1111");
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 	public void run() {
 		try {
 			adminIn window = new adminIn();
@@ -91,6 +92,7 @@ public class adminIn {
 				else if (welcome.officerlist.contains(email.getText())) {
 				a.delete(email.getText());
 				welcome.officerlist.remove(email.getText());
+				a.delete(email.getText());
 				System.out.println(welcome.officerlist);
 				JOptionPane.showMessageDialog(null, "Done");
 				frame.dispose();

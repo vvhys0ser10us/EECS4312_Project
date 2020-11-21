@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -59,7 +60,14 @@ public class Admin {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				if (admin.check(username.getText(), password.getText())) {
+					adminC a = new adminC();
+					a.run();
+					frame.dispose();
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "fail");
+				}
 				System.out.println(admin.check(username.getText(), password.getText()));
 				
 			}

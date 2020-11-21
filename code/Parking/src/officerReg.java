@@ -94,7 +94,7 @@ public class officerReg {
 				officerDB a = new officerDB();
 				a.register(newOff);
 				frame.dispose();
-				login b = new login();
+				officerLogin b = new officerLogin();
 				b.run();
 				JOptionPane.showMessageDialog(null, "Done");
 				}
