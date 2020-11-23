@@ -42,14 +42,17 @@ public class userWindow {
 		
 		bookButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Test
+				//leading to a separate
+				//window, where once clicked, the customer is prompted to enter the parking space number, booking
+				//time, and their license plate number.
 				System.out.println("book");
 			}
 		});
 		
 		payButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Test
+				//leading to a separate window, where
+				//once clicked, the customer is prompted to enter the parking space number they wish to pay for.
 				System.out.println("pay");
 			}
 		});
@@ -63,7 +66,8 @@ public class userWindow {
 		
 		viewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Test
+				//leading to
+				//a separate window displaying all their bookings.
 				System.out.println("view");
 			}
 		});
