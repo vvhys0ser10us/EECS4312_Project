@@ -21,7 +21,7 @@ public class Admin {
 //			}
 //		});
 //	}
-//test
+
 	public void run() {
 	try {
 		Admin window = new Admin();
