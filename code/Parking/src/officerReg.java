@@ -4,7 +4,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
+
 
 public class officerReg {
 
@@ -13,6 +17,16 @@ public class officerReg {
 	private JTextField lastname;
 	private JTextField email;
 	private JTextField password;
+	public FileWriter offCSV;
+	public FileWriter offCSV2;
+	public BufferedWriter buffer;
+	public BufferedWriter buffer2;
+	//try {
+		//private FileWriter offCSV = new FileWriter("Officer_Data.csv");
+	//}
+	//catch (Exception e){
+		//e.printStackTrace();
+	//}
 
 	/**
 	 * Launch the application.
@@ -36,6 +50,7 @@ public class officerReg {
 		e.printStackTrace();
 	}
 	}
+	
 	public officerReg() {
 		initialize();
 	}
@@ -89,7 +104,23 @@ public class officerReg {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//System.out.println(frstname);
+				/*
+				try {
+					addValuesToCSV(firstname.getText(), lastname.getText(), email.getText(), password.getText());
+				} catch (IOException e1) {
+					//System.out.println("Error");
+					e1.printStackTrace();
+				}
+				*/
 				if (welcome.officerlist.contains(email.getText())) {
+					
+					try {
+						addValuesToCSV(firstname.getText(), lastname.getText(), email.getText(), password.getText());
+					} catch (IOException | NullPointerException e1) {
+						e1.printStackTrace();
+					}
+					
 				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				officerDB a = new officerDB();
 				a.register(newOff);
@@ -115,6 +146,66 @@ public class officerReg {
 		});
 		btnBack.setBounds(6, 6, 117, 29);
 		frame.getContentPane().add(btnBack);
+	}
+	
+	/**
+	 * This method creates the CSV file with headings.
+	 * @throws IOException
+	 */
+	public void createCSV() throws IOException {
+		//offCSV = new FileWriter("Officer_Data.csv", true);
+		offCSV = new FileWriter("src/Officer_Data.csv");
+		buffer = new BufferedWriter(offCSV);
+		
+		buffer.write("First Name");
+		buffer.write(",");
+		buffer.write("Last Name");
+		buffer.write(",");
+		buffer.write("Email");
+		buffer.write(",");
+		buffer.write("Password");
+		//buffer.write("\n");
+		buffer.newLine();
+		
+		/*
+		offCSV.append("Id");
+		offCSV.append(",");
+		*/
+		/*
+		offCSV.append("First Name");
+		offCSV.append(",");
+		offCSV.append("Last Name");
+		offCSV.append(",");
+		offCSV.append("Email");
+		offCSV.append(",");
+		offCSV.append("Password");
+		offCSV.append("\n");	
+		*/
+	}
+	
+	public void addValuesToCSV(String fname, String lname, String email, String password) throws IOException {
+		/*
+		offCSV = new FileWriter("src/Officer_Data.csv", true);
+		offCSV.append(fname);
+		offCSV.append(",");
+		offCSV.append(lname);
+		offCSV.append(",");
+		offCSV.append(email);
+		offCSV.append(",");
+		offCSV.append(password);
+		offCSV.append("\n");
+		*/
+		offCSV2 = new FileWriter("src/Officer_Data.csv", true);
+		buffer2 = new BufferedWriter(offCSV2);
+		buffer2.write(fname);
+		buffer2.write(",");
+		buffer2.write(lname);
+		buffer2.write(",");
+		buffer2.write(email);
+		buffer2.write(",");
+		buffer2.write(password);
+		buffer2.newLine();
+		buffer2.close();
 	}
 
 }

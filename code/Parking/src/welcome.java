@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -18,12 +19,21 @@ public class welcome {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				officerReg officer = new officerReg();
 				try {
 					welcome window = new welcome();
 					window.frame.setVisible(true);
 					welcome.officerlist.add("1111");
-					
+					officer.createCSV();
 				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				try {
+					officer.buffer.close();
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -46,6 +56,15 @@ public class welcome {
 	 */
 	public welcome() {
 		initialize();
+		/*
+		officerReg officer = new officerReg();
+		
+		try {
+			officer.createCSV();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		*/
 	}
 
 	/**
