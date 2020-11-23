@@ -23,7 +23,11 @@ public void delete(String email) {
 }
 public boolean login(String email,String psd) {
 	for (int i=0;i < welcome.db.size();i++) {
-		if (welcome.db.get(i).getEmail().equals(email) && welcome.db.get(i).getPassword().equals(psd)) return true;
+		if (welcome.db.get(i).getEmail().equals(email) && welcome.db.get(i).getPassword().equals(psd)) 
+		{
+			userWindow a = new userWindow();
+			return true;
+		}
 	}
 	return false;
 }
