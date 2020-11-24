@@ -12,6 +12,8 @@ public class payment {
 	private JFrame frame;
 	private JTextField bookId;
 	private int needtopay = 0;
+	private String fname;
+	private String lname;
 	
 	public payment() {
 		frame = new JFrame();
@@ -31,8 +33,16 @@ public class payment {
 		frame.getContentPane().add(bookId);
 		bookId.setColumns(10);
 		
+		JLabel fnameLabel = new JLabel("First Name:   " + fname);
+		fnameLabel.setBounds(150, 170, 200, 16);
+		frame.getContentPane().add(fnameLabel);
+		
+		JLabel lnameLabel = new JLabel("Last Name:   " + lname);
+		lnameLabel.setBounds(150, 200, 200, 16);
+		frame.getContentPane().add(lnameLabel);
+		
 		JLabel paymentLabel = new JLabel("Total Payment: " + needtopay);
-		paymentLabel.setBounds(163, 150, 200, 16);
+		paymentLabel.setBounds(163, 275, 200, 16);
 		frame.getContentPane().add(paymentLabel);
 		
 		JButton btnConfirm = new JButton("confirm");
