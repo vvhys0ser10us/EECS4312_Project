@@ -73,6 +73,9 @@ public class officerLogin {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				officerDB a= new officerDB();
+				System.out.println(a.login(uname.getText(), psd.getText()));
+				frame.dispose();
 			}
 		});
 		btnLogin.setBounds(71, 193, 117, 29);

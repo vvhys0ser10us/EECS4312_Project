@@ -123,7 +123,9 @@ public class officerReg {
 					
 				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				officerDB a = new officerDB();
-				a.register(newOff);
+				a.register(newOff);				
+				System.out.println(welcome.officer.get(0).getEmail());
+				System.out.println(welcome.officer.get(0).getPassword());
 				frame.dispose();
 				officerLogin b = new officerLogin();
 				b.run();
@@ -154,7 +156,7 @@ public class officerReg {
 	 */
 	public void createCSV() throws IOException {
 		//offCSV = new FileWriter("Officer_Data.csv", true);
-		offCSV = new FileWriter("src/Officer_Data.csv");
+		offCSV = new FileWriter("code/parking/src/Officer_Data.csv");
 		buffer = new BufferedWriter(offCSV);
 		
 		buffer.write("First Name");
@@ -195,7 +197,7 @@ public class officerReg {
 		offCSV.append(password);
 		offCSV.append("\n");
 		*/
-		offCSV2 = new FileWriter("src/Officer_Data.csv", true);
+		offCSV2 = new FileWriter("code/parking/src/Officer_Data.csv", true);
 		buffer2 = new BufferedWriter(offCSV2);
 		buffer2.write(fname);
 		buffer2.write(",");

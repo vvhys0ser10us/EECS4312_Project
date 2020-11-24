@@ -75,6 +75,7 @@ public class login {
 			public void actionPerformed(ActionEvent e) {
 				userDB a= new userDB();
 				System.out.println(a.login(uname.getText(), psd.getText()));
+				frame.dispose();
 			}
 		});
 		btnLogin.setBounds(165, 195, 117, 29);

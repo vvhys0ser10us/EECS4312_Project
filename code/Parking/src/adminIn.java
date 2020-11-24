@@ -103,5 +103,16 @@ public class adminIn {
 		});
 		btnDelete.setBounds(264, 178, 115, 23);
 		frame.getContentPane().add(btnDelete);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				adminC a = new adminC();
+				a.run();
+			}
+		});
+		btnBack.setBounds(6, 6, 117, 29);
+		frame.getContentPane().add(btnBack);
 	}
 }
