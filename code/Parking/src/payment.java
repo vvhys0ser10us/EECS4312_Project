@@ -3,11 +3,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class payment {
 //This feature allows the customer to pay for their currently booked parking space.
 	
 	private JFrame frame;
+	private JTextField bookId;
+	private int needtopay = 0;
 	
 	public payment() {
 		frame = new JFrame();
@@ -17,6 +21,19 @@ public class payment {
 		frame.getContentPane().setLayout(null);
 		
 		frame.setVisible(true);
+		
+		JLabel lblNewLabel = new JLabel("BOOKING ID");
+		lblNewLabel.setBounds(63, 105, 200, 16);
+		frame.getContentPane().add(lblNewLabel);
+		
+		bookId = new JTextField();
+		bookId.setBounds(255, 100, 130, 26);
+		frame.getContentPane().add(bookId);
+		bookId.setColumns(10);
+		
+		JLabel paymentLabel = new JLabel("Total Payment: " + needtopay);
+		paymentLabel.setBounds(163, 150, 200, 16);
+		frame.getContentPane().add(paymentLabel);
 		
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
