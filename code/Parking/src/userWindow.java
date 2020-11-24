@@ -19,26 +19,28 @@ public class userWindow {
 	
 	public userWindow() {
 		frame = new JFrame();
-	 	panel = new JPanel();
+		frame.setTitle("User Services");
+		frame.setBounds(900, 500, 450, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		frame.setVisible(true);
 		
 		bookButton = new JButton("BOOK SPACE");
 		cancelButton = new JButton("CANCELLATIONS");
 		payButton = new JButton("PAY");
 		viewButton = new JButton("VIEW BOOKINGS");
+		bookButton.setBounds(120, 60, 200, 29);
+		frame.getContentPane().add(bookButton);
 		
-		panel.setBorder(BorderFactory.createEmptyBorder(200,200,100,200));
-		panel.setLayout(new GridLayout(0,1));
-		panel.add(bookButton);
-		panel.add(payButton);
-		panel.add(cancelButton);
-		panel.add(viewButton);
+		cancelButton.setBounds(120, 120, 200, 29);
+		frame.getContentPane().add(cancelButton);
 		
+		payButton.setBounds(120, 180, 200, 29);
+		frame.getContentPane().add(payButton);
 		
-		frame.add(panel, BorderLayout.CENTER);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle("User Services");
-		frame.pack();
-		frame.setVisible(true);
+		viewButton.setBounds(120, 240, 200, 29);
+		frame.getContentPane().add(viewButton);
 		
 		bookButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -55,7 +57,8 @@ public class userWindow {
 			public void actionPerformed(ActionEvent e) {
 				//leading to a separate window, where
 				//once clicked, the customer is prompted to enter the parking space number they wish to pay for.
-				System.out.println("pay");
+				payment pay = new payment();
+				frame.dispose();
 			}
 		});
 		
@@ -71,14 +74,11 @@ public class userWindow {
 			public void actionPerformed(ActionEvent e) {
 				//leading to
 				//a separate window displaying all their bookings.
-				System.out.println("view");
+				viewbookings vb = new viewbookings();
+				frame.dispose();
 			}
 		});
 		
 	}
-	
-
-
-
 		
 }
