@@ -59,8 +59,19 @@ public class bookSpace {
 
 			}
 		});
-		btnConfirm.setBounds(166, 372, 117, 29);
+		btnConfirm.setBounds(70, 372, 117, 29);
 		frame.getContentPane().add(btnConfirm);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				userWindow a = new userWindow();
+
+			}
+		});
+		btnBack.setBounds(270, 372, 117, 29);
+		frame.getContentPane().add(btnBack);
 
 	}
 

@@ -46,6 +46,7 @@ public class userWindow {
 				//window, where once clicked, the customer is prompted to enter the parking space number, booking
 				//time, and their license plate number.
 				bookSpace bs = new bookSpace();
+				frame.dispose();
 
 			}
 		});
@@ -61,7 +62,8 @@ public class userWindow {
 		cancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//Test
-				System.out.println("cancel");
+				cancellation cl = new cancellation();
+				frame.dispose();
 			}
 		});
 		
