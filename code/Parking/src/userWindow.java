@@ -45,7 +45,8 @@ public class userWindow {
 				//leading to a separate
 				//window, where once clicked, the customer is prompted to enter the parking space number, booking
 				//time, and their license plate number.
-				System.out.println("book");
+				bookSpace bs = new bookSpace();
+
 			}
 		});
 		
