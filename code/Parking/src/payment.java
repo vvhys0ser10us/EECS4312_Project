@@ -57,18 +57,29 @@ public class payment {
 		fname.setColumns(10);
 		
 		JLabel paymentLabel = new JLabel("Total Payment: " + needtopay);
-		paymentLabel.setBounds(163, 275, 200, 16);
+		paymentLabel.setBounds(180, 300, 200, 16);
 		frame.getContentPane().add(paymentLabel);
-		
-		JButton btnConfirm = new JButton("confirm");
+	
+		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//
-
+				frame.dispose();
+				paymentPage a = new paymentPage();
 			}
 		});
 		btnConfirm.setBounds(70, 372, 117, 29);
 		frame.getContentPane().add(btnConfirm);
+		
+		JButton btnEnter = new JButton("Enter");
+		btnEnter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//calculate payment here.
+				needtopay = 10;
+				paymentLabel.setText("Total Payment: " + needtopay);
+			}
+		});
+		btnEnter.setBounds(170, 250, 117, 29);
+		frame.getContentPane().add(btnEnter);
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
@@ -84,4 +95,5 @@ public class payment {
 	public static void main(String[] args) {
 		new payment();
 	}
+	
 }
