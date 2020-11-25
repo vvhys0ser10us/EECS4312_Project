@@ -14,6 +14,8 @@ public class welcome {
 	public static ArrayList<officerAccount> officer = new ArrayList<>();
 	public static ArrayList<String> officerlist = new ArrayList<>();
 	public static ArrayList<booking> bookinglist = new ArrayList<>();
+	public static ArrayList<String> spaceIDlist = new ArrayList<>();
+	public static ArrayList<Space> spacelist = new ArrayList<>();
 	public static userAccount currentUser;
 	public static booking currentBooking;
 	/**

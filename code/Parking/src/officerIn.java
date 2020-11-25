@@ -45,6 +45,9 @@ public class officerIn {
 		JButton btnManagerSpace = new JButton("Manage space");
 		btnManagerSpace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				manageSpace a = new manageSpace();
+				a.run();
 			}
 		});
 		btnManagerSpace.setBounds(162, 28, 117, 29);
