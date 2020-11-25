@@ -10,10 +10,10 @@ public class payment {
 //This feature allows the customer to pay for their currently booked parking space.
 	
 	private JFrame frame;
-	private JTextField bookId;
-	private int needtopay = 0;
-	private String fname;
-	private String lname;
+	public JTextField bookId;
+	public int needtopay = 0;
+	public JTextField fname;
+	public JTextField lname;
 	
 	public payment() {
 		frame = new JFrame();
@@ -33,13 +33,28 @@ public class payment {
 		frame.getContentPane().add(bookId);
 		bookId.setColumns(10);
 		
-		JLabel fnameLabel = new JLabel("First Name:   " + fname);
-		fnameLabel.setBounds(150, 170, 200, 16);
+		JLabel fnameLabel = new JLabel("FirstName");
+		fnameLabel.setBounds(63, 155, 200, 16);
 		frame.getContentPane().add(fnameLabel);
 		
-		JLabel lnameLabel = new JLabel("Last Name:   " + lname);
-		lnameLabel.setBounds(150, 200, 200, 16);
+		JLabel lnameLabel = new JLabel("LastName" );
+		lnameLabel.setBounds(63, 205, 200, 16);
 		frame.getContentPane().add(lnameLabel);
+		
+		fname = new JTextField();
+		fname.setBounds(255, 155, 130, 26);
+		frame.getContentPane().add(fname);
+		fname.setColumns(10);
+		
+		lname = new JTextField();
+		lname.setBounds(255, 205, 130, 26);
+		frame.getContentPane().add(lname);
+		lname.setColumns(10);
+		
+		fname = new JTextField();
+		fname.setBounds(255, 100, 130, 26);
+		frame.getContentPane().add(fname);
+		fname.setColumns(10);
 		
 		JLabel paymentLabel = new JLabel("Total Payment: " + needtopay);
 		paymentLabel.setBounds(163, 275, 200, 16);
