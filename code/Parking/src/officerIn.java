@@ -52,6 +52,17 @@ public class officerIn {
 		});
 		btnManagerSpace.setBounds(162, 28, 117, 29);
 		frame.getContentPane().add(btnManagerSpace);
+		
+		JButton btnView = new JButton("View Bookings");
+		btnView.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				officerviewBooking a = new officerviewBooking();
+				a.run();
+			}
+		});
+		btnView.setBounds(162, 101, 117, 29);
+		frame.getContentPane().add(btnView);
 	}
 
 }
