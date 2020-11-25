@@ -15,11 +15,16 @@ public class welcome {
 	public static ArrayList<String> officerlist = new ArrayList<>();
 	public static ArrayList<booking> bookinglist = new ArrayList<>();
 	public static userAccount currentUser;
+	public static booking currentBooking;
 	/**
 	 * Launch the application.
 	 */
 	public static void setUser(userAccount user) {
 		currentUser = user;
+	}
+	
+	public static void setBooking(booking booking) {
+		currentBooking = booking;
 	}
 	
 	public static void main(String[] args) {

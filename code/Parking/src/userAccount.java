@@ -16,7 +16,7 @@ public userAccount(String firstname,String lastname, String email, String passwo
 
 }
 public String getName() {
-	return firstname + lastname;
+	return firstname + " " + lastname;
 }
 public String getEmail() {
 	return email;

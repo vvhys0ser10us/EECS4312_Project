@@ -1,15 +1,15 @@
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 public class booking {
 	private String spaceId;
 	private String bookingId;
 	private userAccount user;
-	private Time bookingTime;
-	private Time expiryTime;
+	private LocalDateTime bookingTime;
+	private LocalDateTime expiryTime;
 	private String plateNum;
 	private boolean status = false;
 	
-	public booking(userAccount user, Time bookingTime, Time expiryTime, String plateNum, String spaceId) {
+	public booking(userAccount user, LocalDateTime bookingTime, LocalDateTime expiryTime, String plateNum, String spaceId) {
 		this.user = user;
 		this.bookingTime = bookingTime;
 		this.expiryTime = expiryTime;
@@ -39,11 +39,11 @@ public class booking {
 		return this.bookingId;
 	}
 	
-	public Time getBookingTime() {
+	public LocalDateTime getBookingTime() {
 		return this.bookingTime;
 	}
 	
-	public Time getExpiryTime() {
+	public LocalDateTime getExpiryTime() {
 		return this.expiryTime;
 	}
 }

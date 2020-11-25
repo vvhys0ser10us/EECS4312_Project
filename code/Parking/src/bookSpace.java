@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,9 +65,16 @@ public class bookSpace {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//
-				//welcome.db
-
+				userAccount a = welcome.currentUser;
+				LocalDateTime startT  = LocalDateTime.parse(sTime.getText());
+				LocalDateTime endT  = LocalDateTime.parse(eTime.getText());
+				String plate = plateId.getText();
+				String id = spaceId.getText();
+				booking newBooking = new booking(a, startT, endT, plate, id);
+				welcome.bookinglist.add(newBooking);
+				welcome.setBooking(newBooking);
+				bookingSuccess b = new bookingSuccess();
+				frame.dispose();
 			}
 		});
 		btnConfirm.setBounds(70, 372, 117, 29);
@@ -87,6 +95,7 @@ public class bookSpace {
 	
 	public static void main(String[] args) {
 		new bookSpace();
+
 	}
 
 	
