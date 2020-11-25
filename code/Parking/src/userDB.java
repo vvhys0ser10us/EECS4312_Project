@@ -26,6 +26,7 @@ public boolean login(String email,String psd) {
 		if (welcome.db.get(i).getEmail().equals(email) && welcome.db.get(i).getPassword().equals(psd)) 
 		{
 			userWindow a = new userWindow();
+			welcome.setUser(welcome.db.get(i));
 			return true;
 		}
 	}

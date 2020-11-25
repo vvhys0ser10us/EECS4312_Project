@@ -64,5 +64,8 @@ public class paymentPage {
 		
 	}
 	
+	public static void main(String[] args) {
+		new paymentPage();
+	}
 	
 }
