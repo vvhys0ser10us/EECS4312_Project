@@ -7,6 +7,11 @@ import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.UUID;
 import java.awt.event.ActionEvent;
 
 
@@ -21,6 +26,8 @@ public class officerReg {
 	public FileWriter offCSV2;
 	public BufferedWriter buffer;
 	public BufferedWriter buffer2;
+	private int num = 0;
+	private ArrayList<Integer> usedNums;
 	//try {
 		//private FileWriter offCSV = new FileWriter("Officer_Data.csv");
 	//}
@@ -104,19 +111,14 @@ public class officerReg {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println(frstname);
-				/*
-				try {
-					addValuesToCSV(firstname.getText(), lastname.getText(), email.getText(), password.getText());
-				} catch (IOException e1) {
-					//System.out.println("Error");
-					e1.printStackTrace();
-				}
-				*/
 				if (welcome.officerlist.contains(email.getText())) {
-					
+					ArrayList<Integer> numberlist = new ArrayList<Integer>();
+			        for (int i=100; i<999; i++) {
+			        	numberlist.add(i);
+			        }
+			        Collections.shuffle(numberlist);
 					try {
-						addValuesToCSV(firstname.getText(), lastname.getText(), email.getText(), password.getText());
+						addValuesToCSV(numberlist.get(0).toString(), firstname.getText(), lastname.getText(), email.getText(), password.getText());
 					} catch (IOException | NullPointerException e1) {
 						e1.printStackTrace();
 					}
@@ -155,10 +157,10 @@ public class officerReg {
 	 * @throws IOException
 	 */
 	public void createCSV() throws IOException {
-		//offCSV = new FileWriter("Officer_Data.csv", true);
 		offCSV = new FileWriter("code/parking/src/Officer_Data.csv");
 		buffer = new BufferedWriter(offCSV);
-		
+		buffer.write("ID");
+		buffer.write(",");
 		buffer.write("First Name");
 		buffer.write(",");
 		buffer.write("Last Name");
@@ -166,39 +168,14 @@ public class officerReg {
 		buffer.write("Email");
 		buffer.write(",");
 		buffer.write("Password");
-		//buffer.write("\n");
 		buffer.newLine();
-		
-		/*
-		offCSV.append("Id");
-		offCSV.append(",");
-		*/
-		/*
-		offCSV.append("First Name");
-		offCSV.append(",");
-		offCSV.append("Last Name");
-		offCSV.append(",");
-		offCSV.append("Email");
-		offCSV.append(",");
-		offCSV.append("Password");
-		offCSV.append("\n");	
-		*/
 	}
 	
-	public void addValuesToCSV(String fname, String lname, String email, String password) throws IOException {
-		/*
-		offCSV = new FileWriter("src/Officer_Data.csv", true);
-		offCSV.append(fname);
-		offCSV.append(",");
-		offCSV.append(lname);
-		offCSV.append(",");
-		offCSV.append(email);
-		offCSV.append(",");
-		offCSV.append(password);
-		offCSV.append("\n");
-		*/
+	public void addValuesToCSV(String id, String fname, String lname, String email, String password) throws IOException {
 		offCSV2 = new FileWriter("code/parking/src/Officer_Data.csv", true);
 		buffer2 = new BufferedWriter(offCSV2);
+		buffer2.write(id);
+		buffer2.write(",");
 		buffer2.write(fname);
 		buffer2.write(",");
 		buffer2.write(lname);
