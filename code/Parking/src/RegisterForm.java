@@ -46,20 +46,20 @@ public class RegisterForm {
 	private void initialize() {
 		frame = new JFrame();
 
-		frame.setTitle("custmoer_register");
+		frame.setTitle("Customer Registration");
 		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Firstname");
+		JLabel lblNewLabel = new JLabel("First Name");
 		lblNewLabel.setBounds(63, 105, 87, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Lastname");
+		JLabel lblNewLabel_1 = new JLabel("Last Name");
 		lblNewLabel_1.setBounds(63, 162, 61, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("email");
+		JLabel lblNewLabel_2 = new JLabel("Email");
 		lblNewLabel_2.setBounds(63, 222, 61, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 		
