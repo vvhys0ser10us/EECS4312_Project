@@ -51,7 +51,7 @@ public class login {
 		frame.setBounds(900, 500, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setTitle("customer_login");
+		frame.setTitle("Customer Login");
 		JLabel username = new JLabel("Username");
 		username.setBounds(49, 81, 100, 16);
 		frame.getContentPane().add(username);
