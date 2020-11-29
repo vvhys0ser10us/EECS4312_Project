@@ -101,6 +101,8 @@ public class welcome {
 		btncustomer.setBounds(45, 179, 117, 29);
 		frame.getContentPane().add(btncustomer);
 		
+		
+		
 		JButton btnNewCustomer = new JButton("New Customer");
 		btnNewCustomer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -109,7 +111,7 @@ public class welcome {
 				a.run();
 			}
 		});
-		btnNewCustomer.setBounds(269, 179, 117, 29);
+		btnNewCustomer.setBounds(269, 179, 118, 29);
 		frame.getContentPane().add(btnNewCustomer);
 		
 		JButton btnOfficer = new JButton("I am an Officer");
