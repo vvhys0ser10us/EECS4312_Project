@@ -50,7 +50,7 @@ public class adminC {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnOfficer = new JButton("manage Officer");
+		JButton btnOfficer = new JButton("Manage Officer");
 		btnOfficer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				adminIn a = new adminIn();
@@ -61,7 +61,7 @@ public class adminC {
 		btnOfficer.setBounds(22, 113, 150, 29);
 		frame.getContentPane().add(btnOfficer);
 		
-		JButton btnPayment = new JButton("manage Payment");
+		JButton btnPayment = new JButton("Manage Payment");
 		btnPayment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				adminPay manage_pay = new adminPay();
