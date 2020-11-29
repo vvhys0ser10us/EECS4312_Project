@@ -62,6 +62,14 @@ public class adminC {
 		frame.getContentPane().add(btnOfficer);
 		
 		JButton btnPayment = new JButton("manage Payment");
+		btnPayment.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				adminPay manage_pay = new adminPay();
+				manage_pay.run();
+				frame.dispose();////////////////
+			}
+			
+		});
 		btnPayment.setBounds(274, 113, 150, 29);
 		frame.getContentPane().add(btnPayment);
 	}
