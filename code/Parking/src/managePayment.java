@@ -1,5 +1,10 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class managePayment {/////////////////
@@ -24,7 +29,7 @@ public class managePayment {/////////////////
 	
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 300);
+		frame.setBounds(900, 500, 450, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -63,5 +68,29 @@ public class managePayment {/////////////////
 		password.setBounds(255, 222, 130, 26);
 		frame.getContentPane().add(password);
 		password.setColumns(10);
+		
+		
+		JButton paid = new JButton("Paid");
+		paid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "The status has been updated to: Paid ");
+
+			}
+		});
+		paid.setBounds(63, 275, 117, 29);
+		frame.getContentPane().add(paid);
+		
+		JButton unpaid = new JButton("Unpaid");
+		unpaid.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "The status has been updated to: Unpaid ");
+
+			}
+		});
+		unpaid.setBounds(250, 275, 117, 29);
+		frame.getContentPane().add(unpaid);
+		
 	}
+	
+	
 }
