@@ -65,7 +65,7 @@ public class adminIn {
 		JButton btnAdd = new JButton("add officer");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (email.getText().isBlank()) JOptionPane.showMessageDialog(null, "email cannot be empty");
+				if (email.getText().isEmpty()) JOptionPane.showMessageDialog(null, "email cannot be empty");
 				else {
 					if (!welcome.officerlist.contains(email.getText())) {
 						welcome.officerlist.add(email.getText());
@@ -88,7 +88,7 @@ public class adminIn {
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				officerDB a = new officerDB();
-				if (email.getText().isBlank()) JOptionPane.showMessageDialog(null, "email cannot be empty"); 
+				if (email.getText().isEmpty()) JOptionPane.showMessageDialog(null, "email cannot be empty"); 
 				else if (welcome.officerlist.contains(email.getText())) {
 				a.delete(email.getText());
 				welcome.officerlist.remove(email.getText());
