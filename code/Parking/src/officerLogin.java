@@ -49,7 +49,7 @@ public class officerLogin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 300);
+		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("officer_login");

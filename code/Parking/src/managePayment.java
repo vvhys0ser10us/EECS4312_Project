@@ -29,7 +29,7 @@ public class managePayment {/////////////////
 	
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 400);
+		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -89,6 +89,18 @@ public class managePayment {/////////////////
 		});
 		unpaid.setBounds(250, 275, 117, 29);
 		frame.getContentPane().add(unpaid);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				adminC a = new adminC();
+				frame.dispose();
+				a.run();
+				
+			}
+		});
+		btnBack.setBounds(6, 6, 117, 29);
+		frame.getContentPane().add(btnBack);
 		
 	}
 	

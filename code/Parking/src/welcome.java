@@ -45,13 +45,13 @@ public class welcome {
 					e.printStackTrace();
 				}
 				
-				try {
-					officer.buffer.close();
-					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+//				try {
+//					officer.buffer.close();
+//					
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 			}
 		});
 	}

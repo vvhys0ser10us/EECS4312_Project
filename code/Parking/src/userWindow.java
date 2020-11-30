@@ -16,6 +16,7 @@ public class userWindow {
 	private JButton cancelButton;
 	private JButton payButton;
 	private JButton viewButton;
+	private JButton btnLogout;
 	
 	public userWindow() {
 		frame = new JFrame();
@@ -41,6 +42,17 @@ public class userWindow {
 		
 		viewButton.setBounds(120, 240, 200, 29);
 		frame.getContentPane().add(viewButton);
+		
+		btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				welcome a = new welcome();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnLogout.setBounds(6, 6, 117, 29);
+		frame.getContentPane().add(btnLogout);
 		
 		bookButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -21,7 +21,7 @@ public class adminPay {///////////////////////
 	
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 300);
+		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -36,5 +36,16 @@ public class adminPay {///////////////////////
 		});
 		btnCPStatus.setBounds(105, 95, 225, 50);
 		frame.getContentPane().add(btnCPStatus);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				adminC a = new adminC();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnBack.setBounds(0, 6, 117, 29);
+		frame.getContentPane().add(btnBack);
 	}
 }

@@ -46,7 +46,7 @@ public class adminC {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -72,5 +72,16 @@ public class adminC {
 		});
 		btnPayment.setBounds(274, 113, 150, 29);
 		frame.getContentPane().add(btnPayment);
+		
+		JButton btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				welcome a = new welcome();
+				frame.dispose();
+				a.run();
+			}
+		});
+		btnLogout.setBounds(26, 6, 117, 29);
+		frame.getContentPane().add(btnLogout);
 	}
 }
