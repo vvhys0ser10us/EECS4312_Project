@@ -70,15 +70,15 @@ public class officerviewBooking {
 				
 			}
 		});
-		btnBooked.setBounds(132, 125, 182, 29);
+		btnBooked.setBounds(132, 154, 182, 29);
 		frame.getContentPane().add(btnBooked);
 		
 		JButton btnpayment = new JButton("Check Payment status");
-		btnpayment.setBounds(132, 188, 182, 29);
+		btnpayment.setBounds(132, 310, 182, 29);
 		frame.getContentPane().add(btnpayment);
 		
 		JButton btnExpiryDate = new JButton("Check Expirey Date");
-		btnExpiryDate.setBounds(132, 158, 182, 29);
+		btnExpiryDate.setBounds(132, 230, 182, 29);
 		frame.getContentPane().add(btnExpiryDate);
 		
 		email = new JTextField();

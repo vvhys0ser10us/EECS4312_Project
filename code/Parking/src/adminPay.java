@@ -21,7 +21,7 @@ public class adminPay {///////////////////////
 	
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 500);
+		frame.setBounds(900, 500, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
