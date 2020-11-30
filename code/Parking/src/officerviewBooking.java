@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 public class officerviewBooking {
 
 	private JFrame frame;
-	private JTextField textField;
+	private JTextField email;
 
 	/**
 	 * Launch the application.
@@ -65,6 +65,17 @@ public class officerviewBooking {
 		frame.getContentPane().add(btnBack);
 		
 		JButton btnBooked = new JButton("Check booked space");
+		btnBooked.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for (int i=0;i < welcome.db.size();i++) {
+					if (welcome.db.get(i).getEmail().equals(email.getText())) 
+					{
+
+						
+					}
+				}
+			}
+		});
 		btnBooked.setBounds(132, 125, 182, 29);
 		frame.getContentPane().add(btnBooked);
 		
@@ -76,10 +87,10 @@ public class officerviewBooking {
 		btnExpiryDate.setBounds(132, 158, 182, 29);
 		frame.getContentPane().add(btnExpiryDate);
 		
-		textField = new JTextField();
-		textField.setBounds(160, 87, 130, 26);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		email = new JTextField();
+		email.setBounds(160, 87, 130, 26);
+		frame.getContentPane().add(email);
+		email.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("email");
 		lblNewLabel.setBounds(87, 92, 61, 16);
