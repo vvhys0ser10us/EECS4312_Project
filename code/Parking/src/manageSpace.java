@@ -127,7 +127,7 @@ public class manageSpace {
 		JButton btnCheck = new JButton("Check");
 		btnCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!spaceId.getText().isEmpty()) {
+				if (!spaceId.getText().isEmpty() && welcome.spaceIDlist.contains(spaceId.getText())) {
 				boolean a=false;
 				for (int i=0;i<welcome.spacelist.size();i++) {
 					if (welcome.spacelist.get(i).getId()==spaceId.getText()) {
