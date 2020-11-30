@@ -77,7 +77,7 @@ public class login {
 				
 				userDB a= new userDB();
 				
-				System.out.println(a.login(uname.getText(), psd.getText()));
+//				System.out.println(a.login(uname.getText(), psd.getText()));
 				if (a.login(uname.getText(), psd.getText())) {
 				frame.dispose();
 				}

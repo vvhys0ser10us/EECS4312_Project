@@ -75,7 +75,7 @@ public class officerLogin {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				officerDB a= new officerDB();
-				System.out.println(a.login(uname.getText(), psd.getText()));
+//				System.out.println(a.login(uname.getText(), psd.getText()));
 				if (a.login(uname.getText(), psd.getText())) {
 				frame.dispose();
 				}
