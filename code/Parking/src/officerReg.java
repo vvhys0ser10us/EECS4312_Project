@@ -112,6 +112,7 @@ public class officerReg {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!welcome.officerlist.contains(email.getText())) {
+					welcome.officerlist.add(email.getText());
 				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				officerDB a = new officerDB();
 				a.add_officer(email.getText());
@@ -143,35 +144,35 @@ public class officerReg {
 	 * This method creates the CSV file with headings.
 	 * @throws IOException
 	 */
-	public void createCSV() throws IOException {
-		offCSV = new FileWriter("code/parking/src/Officer_Data.csv");
-		buffer = new BufferedWriter(offCSV);
-		buffer.write("ID");
-		buffer.write(",");
-		buffer.write("First Name");
-		buffer.write(",");
-		buffer.write("Last Name");
-		buffer.write(",");
-		buffer.write("Email");
-		buffer.write(",");
-		buffer.write("Password");
-		buffer.newLine();
-	}
-	
-	public void addValuesToCSV(String id, String fname, String lname, String email, String password) throws IOException {
-		offCSV2 = new FileWriter("code/parking/src/Officer_Data.csv", true);
-		buffer2 = new BufferedWriter(offCSV2);
-		buffer2.write(id);
-		buffer2.write(",");
-		buffer2.write(fname);
-		buffer2.write(",");
-		buffer2.write(lname);
-		buffer2.write(",");
-		buffer2.write(email);
-		buffer2.write(",");
-		buffer2.write(password);
-		buffer2.newLine();
-		buffer2.close();
-	}
+//	public void createCSV() throws IOException {
+//		offCSV = new FileWriter("code/parking/src/Officer_Data.csv");
+//		buffer = new BufferedWriter(offCSV);
+//		buffer.write("ID");
+//		buffer.write(",");
+//		buffer.write("First Name");
+//		buffer.write(",");
+//		buffer.write("Last Name");
+//		buffer.write(",");
+//		buffer.write("Email");
+//		buffer.write(",");
+//		buffer.write("Password");
+//		buffer.newLine();
+//	}
+//	
+//	public void addValuesToCSV(String id, String fname, String lname, String email, String password) throws IOException {
+//		offCSV2 = new FileWriter("code/parking/src/Officer_Data.csv", true);
+//		buffer2 = new BufferedWriter(offCSV2);
+//		buffer2.write(id);
+//		buffer2.write(",");
+//		buffer2.write(fname);
+//		buffer2.write(",");
+//		buffer2.write(lname);
+//		buffer2.write(",");
+//		buffer2.write(email);
+//		buffer2.write(",");
+//		buffer2.write(password);
+//		buffer2.newLine();
+//		buffer2.close();
+//	}
 
 }
