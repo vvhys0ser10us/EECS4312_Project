@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -73,9 +74,14 @@ public class login {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				userDB a= new userDB();
+				
 				System.out.println(a.login(uname.getText(), psd.getText()));
+				if (a.login(uname.getText(), psd.getText())) {
 				frame.dispose();
+				}
+				else JOptionPane.showMessageDialog(null, "Check Username and Password");
 			}
 		});
 		btnLogin.setBounds(165, 195, 117, 29);

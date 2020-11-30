@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -75,7 +76,10 @@ public class officerLogin {
 			public void actionPerformed(ActionEvent e) {
 				officerDB a= new officerDB();
 				System.out.println(a.login(uname.getText(), psd.getText()));
+				if (a.login(uname.getText(), psd.getText())) {
 				frame.dispose();
+				}
+				else JOptionPane.showMessageDialog(null, "Check Username and Password");
 			}
 		});
 		btnLogin.setBounds(71, 193, 117, 29);
