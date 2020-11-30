@@ -82,12 +82,13 @@ public class manageSpace {
 				if (spaceId.getText().isEmpty()) JOptionPane.showMessageDialog(null, "Enter Id");
 				else if (welcome.spaceIDlist.contains(spaceId.getText())) {
 					welcome.spaceIDlist.remove(spaceId.getText());
+
 					for (int i=0;i<welcome.spacelist.size();i++) {
 						if (welcome.spacelist.get(i).getId()==spaceId.getText()) {
-							welcome.spacelist.remove(i);
-							JOptionPane.showMessageDialog(null, "Removed");
+							welcome.spacelist.remove(i);	
 						}
 					}
+					JOptionPane.showMessageDialog(null, "Removed");
 				}
 				else JOptionPane.showMessageDialog(null, "No such spaceID");
 			}
@@ -137,7 +138,8 @@ public class manageSpace {
 				if (a) JOptionPane.showMessageDialog(null, "Occupied");
 				else JOptionPane.showMessageDialog(null, "Not Occupied");
 			}
-				else JOptionPane.showMessageDialog(null, "Enter ID");
+				else if (spaceId.getText().isEmpty()) JOptionPane.showMessageDialog(null, "Enter ID");
+				else  JOptionPane.showMessageDialog(null, "No such space");
 			}
 			
 			
