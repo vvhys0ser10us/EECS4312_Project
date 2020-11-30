@@ -74,11 +74,16 @@ public class login {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				userDB a= new userDB();
-				
+				officerDB a= new officerDB();
+				userDB b= new userDB();
 //				System.out.println(a.login(uname.getText(), psd.getText()));
 				if (a.login(uname.getText(), psd.getText())) {
+				frame.dispose();
+				}
+				
+				
+//				System.out.println(a.login(uname.getText(), psd.getText()));
+				else if (b.login(uname.getText(), psd.getText())) {
 				frame.dispose();
 				}
 				else JOptionPane.showMessageDialog(null, "Check Username and Password");

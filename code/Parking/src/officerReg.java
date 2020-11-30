@@ -111,29 +111,16 @@ public class officerReg {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (welcome.officerlist.contains(email.getText())) {
-					ArrayList<Integer> numberlist = new ArrayList<Integer>();
-			        for (int i=100; i<999; i++) {
-			        	numberlist.add(i);
-			        }
-			        Collections.shuffle(numberlist);
-					try {
-						addValuesToCSV(numberlist.get(0).toString(), firstname.getText(), lastname.getText(), email.getText(), password.getText());
-					} catch (IOException | NullPointerException e1) {
-						e1.printStackTrace();
-					}
-					
+				if (!welcome.officerlist.contains(email.getText())) {
 				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				officerDB a = new officerDB();
+				a.add_officer(email.getText());
 				a.register(newOff);				
 				System.out.println(welcome.officer.get(0).getEmail());
 				System.out.println(welcome.officer.get(0).getPassword());
-				frame.dispose();
-				officerLogin b = new officerLogin();
-				b.run();
 				JOptionPane.showMessageDialog(null, "Done");
 				}
-				else JOptionPane.showMessageDialog(null, "fail");
+				else JOptionPane.showMessageDialog(null, "email already added");
 				System.out.println(welcome.officerlist);
 			}
 		});
@@ -143,7 +130,7 @@ public class officerReg {
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				officerLogin a = new officerLogin();
+				adminIn a = new adminIn();
 				frame.dispose();
 				a.run();
 			}

@@ -67,13 +67,7 @@ public class officerviewBooking {
 		JButton btnBooked = new JButton("Check booked space");
 		btnBooked.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				for (int i=0;i < welcome.db.size();i++) {
-					if (welcome.db.get(i).getEmail().equals(email.getText())) 
-					{
-
-						
-					}
-				}
+				
 			}
 		});
 		btnBooked.setBounds(132, 125, 182, 29);

@@ -11,6 +11,7 @@ public class welcome {
 
 	private JFrame frame;
 	public static ArrayList<userAccount> db = new ArrayList<>();
+	public static ArrayList<String> userList=new ArrayList<>();
 	public static ArrayList<officerAccount> officer = new ArrayList<>();
 	public static ArrayList<String> officerlist = new ArrayList<>();
 	public static ArrayList<booking> bookinglist = new ArrayList<>();
@@ -37,6 +38,8 @@ public class welcome {
 					welcome window = new welcome();
 					window.frame.setVisible(true);
 					welcome.officerlist.add("1111");
+					officerAccount a = new officerAccount("1","1","1111","1");
+					welcome.officer.add(a);
 					officer.createCSV();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -114,10 +117,10 @@ public class welcome {
 		btnNewCustomer.setBounds(269, 179, 118, 29);
 		frame.getContentPane().add(btnNewCustomer);
 		
-		JButton btnOfficer = new JButton("I am an Officer");
+		JButton btnOfficer = new JButton("Admin");
 		btnOfficer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				officerLogin a = new officerLogin();
+				Admin a = new Admin();
 				frame.dispose();
 				a.run();
 			}

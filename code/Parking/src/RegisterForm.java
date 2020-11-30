@@ -90,6 +90,8 @@ public class RegisterForm {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (!welcome.userList.contains(email.getText()) && !welcome.officerlist.contains(email.getText())) {
+				welcome.userList.add(email.getText());
 				userAccount newCust = new userAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				userDB a = new userDB();
 				a.register(newCust);
@@ -97,7 +99,8 @@ public class RegisterForm {
 				login b = new login();
 				b.run();
 				JOptionPane.showMessageDialog(null, "Done");
-
+				}
+				else JOptionPane.showMessageDialog(null, "email Already exist");
 			}
 		});
 		btnConfirm.setBounds(166, 372, 117, 29);

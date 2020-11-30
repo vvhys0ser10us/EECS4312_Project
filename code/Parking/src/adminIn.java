@@ -54,34 +54,23 @@ public class adminIn {
 		frame.getContentPane().setLayout(null);
 		
 		email = new JTextField();
-		email.setBounds(165, 89, 115, 20);
+		email.setBounds(264, 146, 115, 20);
 		frame.getContentPane().add(email);
 		email.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("email");
-		lblNewLabel_2.setBounds(125, 92, 87, 14);
+		lblNewLabel_2.setBounds(303, 120, 87, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JButton btnAdd = new JButton("add officer");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (email.getText().isEmpty()) JOptionPane.showMessageDialog(null, "email cannot be empty");
-				else {
-					if (!welcome.officerlist.contains(email.getText())) {
-						welcome.officerlist.add(email.getText());
-						JOptionPane.showMessageDialog(null, "Done");
-					}
-					else {
-						JOptionPane.showMessageDialog(null, "Officer already added");
-						
-					}
-					frame.dispose();
-					run();
-					System.out.println(welcome.officerlist);
-				}
+				officerReg a = new officerReg();
+				a.run();
+				frame.dispose();
 			}
 		});
-		btnAdd.setBounds(78, 178, 101, 23);
+		btnAdd.setBounds(50, 178, 101, 23);
 		frame.getContentPane().add(btnAdd);
 		
 		JButton btnDelete = new JButton("delete officer");
