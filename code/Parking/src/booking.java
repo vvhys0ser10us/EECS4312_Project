@@ -8,7 +8,10 @@ public class booking {
 	private LocalDateTime bookingTime;
 	private LocalDateTime expiryTime;
 	private String plateNum;
-	private boolean status = false;
+	private boolean paid = false;
+	private boolean cancelled = false;
+	private boolean completed = false;
+	
 	
 	public booking(userAccount user, LocalDateTime bookingTime, LocalDateTime expiryTime, String plateNum, String spaceId) {
 		this.user = user;
@@ -33,9 +36,18 @@ public class booking {
         return saltStr;
     }
 	
-	public void changeStatus() {
-		this.status = true;
+	public void paidStatus() {
+		this.paid = true;
 	}
+	
+	public void cancelStatus() {
+		this.cancelled = true;
+	}
+	
+	public void completedStatus() {
+		this.completed = true;
+	}
+	
 	
 	public String getPlateNum() {
 		return this.plateNum;

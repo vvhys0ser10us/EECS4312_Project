@@ -36,8 +36,20 @@ public class cancellation {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//
-
+				//cancel the booking
+				String id = lblNewLabel.getText();
+				boolean found = false;
+				boolean cancelled = false;
+				boolean completed = false;
+				for(int i = 0; i < welcome.bookinglist.size(); i ++) {
+					if(welcome.bookinglist.get(i).getBookingId().equals(id)) {
+						found = true;
+					}else {
+						
+					}
+				}
+				
+				
 			}
 		});
 		btnConfirm.setBounds(70, 372, 117, 29);
