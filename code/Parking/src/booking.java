@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.util.Random;
 
 public class booking {
 	private String spaceId;
@@ -15,9 +16,22 @@ public class booking {
 		this.expiryTime = expiryTime;
 		this.plateNum = plateNum;
 		this.spaceId = spaceId;
-		this.bookingId = "12345";
+		this.bookingId = getString();
 		
 	}
+	
+	
+	public String getString() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 8) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+    }
 	
 	public void changeStatus() {
 		this.status = true;

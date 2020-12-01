@@ -14,7 +14,6 @@ public class bookSpace {
 	private JTextField sTime;
 	private JTextField eTime;
 	private JTextField plateId;
-
 	
 	public bookSpace() {
 	
