@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class bookSpace {
 //This feature allows a customer to select which parking space, and how long they want to book it for.
@@ -70,11 +71,38 @@ public class bookSpace {
 				LocalDateTime endT  = LocalDateTime.parse(eTime.getText());
 				String plate = plateId.getText();
 				String id = spaceId.getText();
-				booking newBooking = new booking(a, startT, endT, plate, id);
-				welcome.bookinglist.add(newBooking);
-				welcome.setBooking(newBooking);
-				bookingSuccess b = new bookingSuccess();
-				frame.dispose();
+				boolean found = true;
+				boolean occupied = false;
+				for(int i = 0 ; i < welcome.spacelist.size(); i++) {
+					if(welcome.spacelist.get(i).getId().equals(id)) 
+					{
+						if(welcome.spacelist.get(i).getOccupied() == false) {
+							//found and not occupied
+							//set to occupied
+							welcome.spacelist.get(i).setOccupited(true);
+						}
+						else
+						{
+							occupied = true;
+						}
+					}
+					else {
+						found = false;
+					}
+				}
+				
+				if(found == true && occupied == false ) {
+					booking newBooking = new booking(a, startT, endT, plate, id);
+					welcome.bookinglist.add(newBooking);
+					welcome.setBooking(newBooking);
+					bookingSuccess b = new bookingSuccess();
+					frame.dispose();
+				}
+				else if (found == false){
+					JOptionPane.showMessageDialog(null, "Parking Space Number Does Not Exist!");
+				}else if(found = true && occupied == true ) {
+					JOptionPane.showMessageDialog(null, "Already Occupied!");
+				}
 			}
 		});
 		btnConfirm.setBounds(70, 372, 117, 29);
@@ -95,6 +123,7 @@ public class bookSpace {
 	
 	public static void main(String[] args) {
 		new bookSpace();
+		//1111-11-11T11:11:11
 
 	}
 
