@@ -36,6 +36,18 @@ public class booking {
         return saltStr;
     }
 	
+	public boolean getPaidStatus() {
+		return paid;
+	}
+	
+	public boolean getCancelledStatus() {
+		return cancelled;
+	}
+	
+	public boolean getCompletedStatus() {
+		return completed;
+	}
+	
 	public void paidStatus() {
 		this.paid = true;
 	}

@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class cancellation {
@@ -37,18 +38,31 @@ public class cancellation {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//cancel the booking
-				String id = lblNewLabel.getText();
+				String id = bookId.getText();
 				boolean found = false;
 				boolean cancelled = false;
 				boolean completed = false;
 				for(int i = 0; i < welcome.bookinglist.size(); i ++) {
 					if(welcome.bookinglist.get(i).getBookingId().equals(id)) {
 						found = true;
-					}else {
-						
+						if(welcome.bookinglist.get(i).getCancelledStatus() == true) {
+							cancelled = true;
+						}else if(welcome.bookinglist.get(i).getCompletedStatus() == true) {
+							completed = true;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false ) {
+							welcome.bookinglist.get(i).cancelStatus();
+						}
 					}
 				}
-				
+				if(found == true && cancelled == false && completed == false) {
+					JOptionPane.showMessageDialog(null, "Cancellation Successful");
+				}else if(found == false) {
+					JOptionPane.showMessageDialog(null, "Booking ID Does Not Exist!");
+				}else if(cancelled == true) {
+					JOptionPane.showMessageDialog(null, "Already Cancelled!");
+				}else if(completed == true) {
+					JOptionPane.showMessageDialog(null, "Already Completed!");
+				}
 				
 			}
 		});
