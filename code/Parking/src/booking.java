@@ -84,4 +84,20 @@ public class booking {
 	public LocalDateTime getExpiryTime() {
 		return this.expiryTime;
 	}
+	
+	
+	//get status for viewbooking
+	public String getStatusForViewBooking() {
+		String status = "";
+		if(this.cancelled == true) {
+			status = "Cancelled";
+		}else if(this.completed == true) {
+			status = "Completed";
+		}else if(paid == true) {
+			status = "Paid";
+		}else if(paid == false) {
+			status = "Unpaid";
+		}
+		return status;
+	}
 }
