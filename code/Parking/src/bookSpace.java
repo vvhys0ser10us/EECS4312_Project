@@ -73,6 +73,7 @@ public class bookSpace {
 				String id = spaceId.getText();
 				boolean found = true;
 				boolean occupied = false;
+				
 				for(int i = 0 ; i < welcome.spacelist.size(); i++) {
 					if(welcome.spacelist.get(i).getId().equals(id)) 
 					{
@@ -92,17 +93,21 @@ public class bookSpace {
 					}
 				}
 				
-				if(found == true && occupied == false ) {
-					booking newBooking = new booking(a, startT, endT, plate, space);
-					welcome.bookinglist.add(newBooking);
-					welcome.setBooking(newBooking);
-					bookingSuccess b = new bookingSuccess();
-					frame.dispose();
-				}
-				else if (found == false){
+				if(welcome.spacelist.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Parking Space Number Does Not Exist!");
-				}else if(found = true && occupied == true ) {
-					JOptionPane.showMessageDialog(null, "Already Occupied!");
+				}else {
+					if(found == true && occupied == false ) {
+						booking newBooking = new booking(a, startT, endT, plate, space);
+						welcome.bookinglist.add(newBooking);
+						welcome.setBooking(newBooking);
+						bookingSuccess b = new bookingSuccess();
+						frame.dispose();
+					}
+					else if (found == false){
+						JOptionPane.showMessageDialog(null, "Parking Space Number Does Not Exist!");
+					}else if(found = true && occupied == true ) {
+						JOptionPane.showMessageDialog(null, "Already Occupied!");
+					}
 				}
 			}
 		});
