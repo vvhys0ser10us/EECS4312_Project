@@ -90,7 +90,13 @@ public class RegisterForm {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!welcome.userList.contains(email.getText()) && !welcome.officerlist.contains(email.getText())) {
+				if (!welcome.userList.contains(email.getText()) && 
+						!welcome.officerlist.contains(email.getText()) && 
+						!firstname.getText().isEmpty()&& 
+						!lastname.getText().isEmpty() &&
+						!email.getText().isEmpty() &&
+						!password.getText().isEmpty()) 
+				{
 				welcome.userList.add(email.getText());
 				userAccount newCust = new userAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				userDB a = new userDB();
@@ -99,6 +105,13 @@ public class RegisterForm {
 				login b = new login();
 				b.run();
 				JOptionPane.showMessageDialog(null, "Done");
+				}
+				else if (firstname.getText().isEmpty()|| 
+						lastname.getText().isEmpty() ||
+						email.getText().isEmpty() ||
+						password.getText().isEmpty())
+				{
+					JOptionPane.showMessageDialog(null, "Check input");
 				}
 				else JOptionPane.showMessageDialog(null, "email Already exist");
 			}
