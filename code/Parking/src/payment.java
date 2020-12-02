@@ -65,6 +65,7 @@ public class payment {
 				boolean paid = false;
 				boolean cancelled = false;
 				boolean completed = false;
+				boolean pending = false;
 				String id = bookId.getText();
 				for(int i = 0; i < welcome.bookinglist.size(); i++) {
 					if(welcome.bookinglist.get(i).getBookingId().equals(id)) {
@@ -79,6 +80,11 @@ public class payment {
 						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
 								welcome.bookinglist.get(i).getPaidStatus() == false) {
 								welcome.setBooking(welcome.bookinglist.get(i));
+								found = true;
+								break;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
+								welcome.bookinglist.get(i).getPaidStatus() == false && welcome.bookinglist.get(i).customerPaidstatus() == true) {
+							pending = true;
 						}
 					}else {
 						found = false;
@@ -93,6 +99,8 @@ public class payment {
 					JOptionPane.showMessageDialog(null, "Booking Already Cancelled!");
 				}else if(paid == true && completed == false && cancelled == false) {
 					JOptionPane.showMessageDialog(null, "Booking Already Paid!");
+				}else if(found == true && cancelled == false && completed == false && pending == true) {
+					JOptionPane.showMessageDialog(null, "Payment is pending!");
 				}else if(found == true && cancelled == false && completed == false) {
 					frame.dispose();
 					paymentPage a = new paymentPage();
@@ -111,6 +119,7 @@ public class payment {
 				boolean paid = false;
 				boolean cancelled = false;
 				boolean completed = false;
+				boolean pending = false;
 				String id = bookId.getText();
 				for(int i = 0; i < welcome.bookinglist.size(); i++) {
 					if(welcome.bookinglist.get(i).getBookingId().equals(id)) {
@@ -123,14 +132,19 @@ public class payment {
 								welcome.bookinglist.get(i).getPaidStatus() == true) {
 							paid = true;
 						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
-								welcome.bookinglist.get(i).getPaidStatus() == false) {
-							
+								welcome.bookinglist.get(i).getPaidStatus() == false && welcome.bookinglist.get(i).customerPaidstatus() == false) {
+							found = true;
 							LocalDateTime from = welcome.bookinglist.get(i).getBookingTime();
 							LocalDateTime to = welcome.bookinglist.get(i).getExpiryTime();
 							Duration du = Duration.between(from, to);
 							System.out.println(du.toHours() + " hours");
 							needtopay = (int) (du.toHours() * 10);
+							break;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
+								welcome.bookinglist.get(i).getPaidStatus() == false && welcome.bookinglist.get(i).customerPaidstatus() == true) {
+							pending = true;
 						}
+						
 					}else {
 						found = false;
 					}
@@ -144,8 +158,8 @@ public class payment {
 					JOptionPane.showMessageDialog(null, "Booking Already Cancelled!");
 				}else if(paid == true && completed == false && cancelled == false) {
 					JOptionPane.showMessageDialog(null, "Booking Already Paid!");
-				}else if(found == true && cancelled == false && completed == false) {
-					
+				}else if(found == true && cancelled == false && completed == false && pending == true) {
+					JOptionPane.showMessageDialog(null, "Payment is pending!");
 				}
 				
 				paymentLabel.setText("Total Payment: " + needtopay);

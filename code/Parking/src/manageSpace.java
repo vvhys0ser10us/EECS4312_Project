@@ -63,7 +63,7 @@ public class manageSpace {
 					Space a = new Space(spaceId.getText(),address.getText());
 					welcome.spacelist.add(a);
 					JOptionPane.showMessageDialog(null, "Done");
-
+					System.out.println(welcome.spacelist.size());
 				}
 				else if(spaceId.getText().isEmpty()){ 
 				JOptionPane.showMessageDialog(null, "Enter Id");
