@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class booking {
-	private String spaceId;
+	private Space space;
 	private String bookingId;
 	private userAccount user;
 	private LocalDateTime bookingTime;
@@ -13,12 +13,12 @@ public class booking {
 	private boolean completed = false;
 	
 	
-	public booking(userAccount user, LocalDateTime bookingTime, LocalDateTime expiryTime, String plateNum, String spaceId) {
+	public booking(userAccount user, LocalDateTime bookingTime, LocalDateTime expiryTime, String plateNum, Space space) {
 		this.user = user;
 		this.bookingTime = bookingTime;
 		this.expiryTime = expiryTime;
 		this.plateNum = plateNum;
-		this.spaceId = spaceId;
+		this.space = space;
 		this.bookingId = getString();
 		
 	}
@@ -70,7 +70,7 @@ public class booking {
 	}
 	
 	public String getspaceId() {
-		return this.spaceId;
+		return this.space.getId();
 	}
 	
 	public String getBookingId() {
@@ -83,6 +83,10 @@ public class booking {
 	
 	public LocalDateTime getExpiryTime() {
 		return this.expiryTime;
+	}
+	
+	public Space getSpace() {
+		return this.space;
 	}
 	
 	

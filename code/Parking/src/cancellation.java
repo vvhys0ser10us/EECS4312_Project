@@ -51,6 +51,8 @@ public class cancellation {
 							completed = true;
 						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false ) {
 							welcome.bookinglist.get(i).cancelStatus();
+							//set to unoccupied
+							welcome.bookinglist.get(i).getSpace().setOccupited(false);
 						}
 					}
 				}

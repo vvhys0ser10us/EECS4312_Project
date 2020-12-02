@@ -14,6 +14,7 @@ public class bookSpace {
 	private JTextField sTime;
 	private JTextField eTime;
 	private JTextField plateId;
+	private Space space;
 	
 	public bookSpace() {
 	
@@ -79,6 +80,7 @@ public class bookSpace {
 							//found and not occupied
 							//set to occupied
 							welcome.spacelist.get(i).setOccupited(true);
+							space = welcome.spacelist.get(i);
 						}
 						else
 						{
@@ -91,7 +93,7 @@ public class bookSpace {
 				}
 				
 				if(found == true && occupied == false ) {
-					booking newBooking = new booking(a, startT, endT, plate, id);
+					booking newBooking = new booking(a, startT, endT, plate, space);
 					welcome.bookinglist.add(newBooking);
 					welcome.setBooking(newBooking);
 					bookingSuccess b = new bookingSuccess();
@@ -123,7 +125,7 @@ public class bookSpace {
 	public static void main(String[] args) {
 		new bookSpace();
 		//2020-12-01T20:20:00
-
+		//officer--check
 	}
 
 	
