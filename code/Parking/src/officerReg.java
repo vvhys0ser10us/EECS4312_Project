@@ -111,7 +111,11 @@ public class officerReg {
 		JButton btnConfirm = new JButton("confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!welcome.officerlist.contains(email.getText())) {
+				if (!welcome.officerlist.contains(email.getText())&& 
+						!firstname.getText().isEmpty()&& 
+						!lastname.getText().isEmpty() &&
+						!email.getText().isEmpty() &&
+						!password.getText().isEmpty()) {
 					welcome.officerlist.add(email.getText());
 				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				officerDB a = new officerDB();
@@ -120,6 +124,13 @@ public class officerReg {
 				System.out.println(welcome.officer.get(0).getEmail());
 				System.out.println(welcome.officer.get(0).getPassword());
 				JOptionPane.showMessageDialog(null, "Done");
+				}
+				else if (firstname.getText().isEmpty()|| 
+						lastname.getText().isEmpty() ||
+						email.getText().isEmpty() ||
+						password.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Check input");
+					
 				}
 				else JOptionPane.showMessageDialog(null, "email already added");
 				System.out.println(welcome.officerlist);
