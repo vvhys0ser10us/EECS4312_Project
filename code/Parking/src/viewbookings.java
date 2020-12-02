@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class viewbookings {
-//This feature shows a customer’s current parking booking. Information such as expiry time and
+//This feature shows a customerâ€™s current parking booking. Information such as expiry time and
 //payment status can be viewed.
 	private JFrame frame;
 	
@@ -59,7 +59,7 @@ public class viewbookings {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				userWindow a = new userWindow();
+				new userWindow();
 			}
 		});
 		btnBack.setBounds(165, 372, 117, 29);
