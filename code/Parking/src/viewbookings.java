@@ -36,15 +36,19 @@ public class viewbookings {
 		}else {
 			for(int j = 0; j < list.size(); j++) {
 				JLabel id = new JLabel("Booking ID :  " + list.get(j).getBookingId());
-				id.setBounds(50, 30 + j*60, 200, 16);
+				id.setBounds(50, 30 + j*80, 200, 16);
 				frame.getContentPane().add(id);
 				
+				JLabel starttime = new JLabel("Bookingtime :  " + list.get(j).getBookingTime());
+				starttime.setBounds(80 , 50 + j*80, 250, 16);
+				frame.getContentPane().add(starttime);
+				
 				JLabel expirytime = new JLabel("Expirytime :  " + list.get(j).getExpiryTime());
-				expirytime.setBounds(80 , 50 + j*60, 250, 16);
+				expirytime.setBounds(80 , 70 + j*80, 250, 16);
 				frame.getContentPane().add(expirytime);
 				
 				JLabel status = new JLabel("Status :  " + list.get(j).getStatusForViewBooking());
-				status.setBounds(80 , 70 + j*60, 250, 16);
+				status.setBounds(80 , 90 + j*80, 250, 16);
 				frame.getContentPane().add(status);
 			}
 		}
