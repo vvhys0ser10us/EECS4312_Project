@@ -73,7 +73,6 @@ public class bookSpace {
 				String id = spaceId.getText();
 				boolean found = true;
 				boolean occupied = false;
-//				System.out.println(id);
 				for(int i = 0 ; i < welcome.spacelist.size(); i++) {
 					if(welcome.spacelist.get(i).getId().equals(id)) 
 					{
@@ -81,7 +80,6 @@ public class bookSpace {
 						if(welcome.spacelist.get(i).getOccupied() == false) {
 							//found and not occupied
 							//set to occupied
-
 							welcome.spacelist.get(i).setOccupited(true);
 							space = welcome.spacelist.get(i);
 							found = true;
