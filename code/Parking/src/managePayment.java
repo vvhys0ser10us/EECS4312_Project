@@ -73,7 +73,18 @@ public class managePayment {/////////////////
 		JButton paid = new JButton("Paid");
 		paid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (!welcome.officerlist.contains(email.getText()) &&
+						!firstname.getText().isEmpty()&& 
+						!lastname.getText().isEmpty() &&
+						!email.getText().isEmpty() &&
+						!password.getText().isEmpty() &&
+						firstname.getText().equals(welcome.currentUser.getFirstName()) &&
+						lastname.getText().equals(welcome.currentUser.getFirstName()) &&
+						email.getText().equals(welcome.currentUser.getFirstName()) &&
+						password.getText().equals(welcome.currentBooking.getBookingId()) 
+						)
 				JOptionPane.showMessageDialog(null, "The status has been updated to: Paid ");
+				else JOptionPane.showMessageDialog(null, "Check input");
 
 			}
 		});
@@ -83,7 +94,18 @@ public class managePayment {/////////////////
 		JButton unpaid = new JButton("Unpaid");
 		unpaid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (!welcome.officerlist.contains(email.getText()) &&
+						!firstname.getText().isEmpty()&& 
+						!lastname.getText().isEmpty() &&
+						!email.getText().isEmpty() &&
+						!password.getText().isEmpty() &&
+						firstname.getText().equals(welcome.currentUser.getFirstName()) &&
+						lastname.getText().equals(welcome.currentUser.getFirstName()) &&
+						email.getText().equals(welcome.currentUser.getFirstName()) &&
+						password.getText().equals(welcome.currentBooking.getBookingId()) 
+						)
 				JOptionPane.showMessageDialog(null, "The status has been updated to: Unpaid ");
+				else JOptionPane.showMessageDialog(null, "Check input ");
 
 			}
 		});

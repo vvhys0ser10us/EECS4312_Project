@@ -15,6 +15,12 @@ public userAccount(String firstname,String lastname, String email, String passwo
 	this.password = password;
 
 }
+public String getFirstName() {
+	return firstname;
+}
+public String getLastName() {
+	return lastname;
+}
 public String getName() {
 	return firstname + " " + lastname;
 }
