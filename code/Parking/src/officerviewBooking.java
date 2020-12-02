@@ -49,7 +49,7 @@ public class officerviewBooking {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(900, 500, 450, 500);
+		frame.setBounds(900, 500, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -67,19 +67,12 @@ public class officerviewBooking {
 		JButton btnBooked = new JButton("Check booked space");
 		btnBooked.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				officerViewSpaceID a = new officerViewSpaceID();
+				a.run();
 				
 			}
 		});
-		btnBooked.setBounds(132, 154, 182, 29);
-		frame.getContentPane().add(btnBooked);
-		
-		JButton btnpayment = new JButton("Check Payment status");
-		btnpayment.setBounds(132, 310, 182, 29);
-		frame.getContentPane().add(btnpayment);
-		
-		JButton btnExpiryDate = new JButton("Check Expirey Date");
-		btnExpiryDate.setBounds(132, 230, 182, 29);
-		frame.getContentPane().add(btnExpiryDate);
+
 		
 		email = new JTextField();
 		email.setBounds(160, 87, 130, 26);
@@ -89,6 +82,17 @@ public class officerviewBooking {
 		JLabel lblNewLabel = new JLabel("email");
 		lblNewLabel.setBounds(87, 92, 61, 16);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("Check");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				officerViewSpaceID a = new officerViewSpaceID();
+				a.run();
+				frame.dispose();
+			}
+		});
+		btnNewButton.setBounds(160, 150, 117, 29);
+		frame.getContentPane().add(btnNewButton);
 	}
 
 }
