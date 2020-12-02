@@ -131,8 +131,9 @@ public class manageSpace {
 				if (!spaceId.getText().isEmpty() && welcome.spaceIDlist.contains(spaceId.getText())) {
 				boolean a=false;
 				for (int i=0;i<welcome.spacelist.size();i++) {
-					if (welcome.spacelist.get(i).getId()==spaceId.getText()) {
+					if (welcome.spacelist.get(i).getId().equals(spaceId.getText())) {
 						a = welcome.spacelist.get(i).getOccupied();
+						System.out.println(welcome.spacelist.get(i).getId());
 					}
 				}
 				if (a) JOptionPane.showMessageDialog(null, "Occupied");

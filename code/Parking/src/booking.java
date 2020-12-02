@@ -21,7 +21,6 @@ public class booking {
 		this.plateNum = plateNum;
 		this.space = space;
 		this.bookingId = getString();
-		
 	}
 	
 	
