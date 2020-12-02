@@ -15,7 +15,8 @@ public class booking {
 	
 	public booking(userAccount user, LocalDateTime bookingTime, LocalDateTime expiryTime, String plateNum, Space space) {
 		this.user = user;
-		this.bookingTime = bookingTime;
+		//should booking time whever booking happens?
+		this.bookingTime = LocalDateTime.now();
 		this.expiryTime = expiryTime;
 		this.plateNum = plateNum;
 		this.space = space;
