@@ -84,6 +84,7 @@ public class bookSpace {
 
 							welcome.spacelist.get(i).setOccupited(true);
 							space = welcome.spacelist.get(i);
+							found = true;
 							break;
 						}
 						else
