@@ -126,12 +126,4 @@ public class bookSpace {
 		frame.getContentPane().add(btnBack);
 
 	}
-	
-	public static void main(String[] args) {
-		new bookSpace();
-		//2020-12-01T20:20:00
-		//officer--check
-	}
-
-	
 }

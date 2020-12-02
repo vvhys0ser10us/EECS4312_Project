@@ -1,9 +1,12 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.Duration;
+import java.time.LocalDateTime;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class payment {
@@ -51,11 +54,6 @@ public class payment {
 		frame.getContentPane().add(lname);
 		lname.setColumns(10);
 		
-		fname = new JTextField();
-		fname.setBounds(255, 100, 130, 26);
-		frame.getContentPane().add(fname);
-		fname.setColumns(10);
-		
 		JLabel paymentLabel = new JLabel("Total Payment: " + needtopay);
 		paymentLabel.setBounds(180, 300, 200, 16);
 		frame.getContentPane().add(paymentLabel);
@@ -63,8 +61,39 @@ public class payment {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				paymentPage a = new paymentPage();
+				boolean found = false;
+				boolean paid = false;
+				boolean cancelled = false;
+				boolean completed = false;
+				String id = bookId.getText();
+				for(int i = 0; i < welcome.bookinglist.size(); i++) {
+					if(welcome.bookinglist.get(i).getBookingId().equals(id)) {
+						found = true;
+						if(welcome.bookinglist.get(i).getCancelledStatus() == true) {
+							cancelled = true;
+						}else if (welcome.bookinglist.get(i).getCompletedStatus() == true) {
+							completed = true;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
+								welcome.bookinglist.get(i).getPaidStatus() == true) {
+							paid = true;
+						}
+					}else {
+						found = false;
+					}
+				}
+				
+				if(found == false) {
+					JOptionPane.showMessageDialog(null, "Booking Does Not Exist!");
+				}else if(completed == true) {
+					JOptionPane.showMessageDialog(null, "Booking Already Completed!");
+				}else if(cancelled == true) {
+					JOptionPane.showMessageDialog(null, "Booking Already Cancelled!");
+				}else if(paid == true && completed == false && cancelled == false) {
+					JOptionPane.showMessageDialog(null, "Booking Already Paid!");
+				}else if(found == true && cancelled == false && completed == false) {
+					frame.dispose();
+					paymentPage a = new paymentPage();
+				}
 			}
 		});
 		btnConfirm.setBounds(70, 372, 117, 29);
@@ -74,7 +103,48 @@ public class payment {
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//calculate payment here.
-				needtopay = 10;
+				needtopay = 0;
+				boolean found = false;
+				boolean paid = false;
+				boolean cancelled = false;
+				boolean completed = false;
+				String id = bookId.getText();
+				for(int i = 0; i < welcome.bookinglist.size(); i++) {
+					if(welcome.bookinglist.get(i).getBookingId().equals(id)) {
+						found = true;
+						if(welcome.bookinglist.get(i).getCancelledStatus() == true) {
+							cancelled = true;
+						}else if (welcome.bookinglist.get(i).getCompletedStatus() == true) {
+							completed = true;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
+								welcome.bookinglist.get(i).getPaidStatus() == true) {
+							paid = true;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
+								welcome.bookinglist.get(i).getPaidStatus() == false) {
+							
+							LocalDateTime from = welcome.bookinglist.get(i).getBookingTime();
+							LocalDateTime to = welcome.bookinglist.get(i).getExpiryTime();
+							Duration du = Duration.between(from, to);
+							System.out.println(du.toHours() + " hours");
+							needtopay = (int) (du.toHours() * 10);
+						}
+					}else {
+						found = false;
+					}
+				}
+				
+				if(found == false) {
+					JOptionPane.showMessageDialog(null, "Booking Does Not Exist!");
+				}else if(completed == true) {
+					JOptionPane.showMessageDialog(null, "Booking Already Completed!");
+				}else if(cancelled == true) {
+					JOptionPane.showMessageDialog(null, "Booking Already Cancelled!");
+				}else if(paid == true && completed == false && cancelled == false) {
+					JOptionPane.showMessageDialog(null, "Booking Already Paid!");
+				}else if(found == true && cancelled == false && completed == false) {
+					
+				}
+				
 				paymentLabel.setText("Total Payment: " + needtopay);
 			}
 		});
