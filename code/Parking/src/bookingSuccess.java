@@ -29,7 +29,7 @@ public class bookingSuccess {
 		Label2.setBounds(150, 150, 200, 16);
 		frame.getContentPane().add(Label2);
 		
-		JLabel Label3 = new JLabel("Name : " + welcome.currentUser.getName());
+		JLabel Label3 = new JLabel("Name : " + welcome.currentBooking.getUser().getName());
 		Label3.setBounds(150, 175, 200, 16);
 		frame.getContentPane().add(Label3);
 		
