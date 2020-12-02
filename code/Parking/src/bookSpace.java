@@ -81,10 +81,10 @@ public class bookSpace {
 						if(welcome.spacelist.get(i).getOccupied() == false) {
 							//found and not occupied
 							//set to occupied
-							System.out.println(1);
 
 							welcome.spacelist.get(i).setOccupited(true);
 							space = welcome.spacelist.get(i);
+							break;
 						}
 						else
 						{
