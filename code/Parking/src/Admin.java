@@ -78,7 +78,7 @@ public class Admin {
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				officerLogin a = new officerLogin();
+				welcome a = new welcome();
 				frame.dispose();
 				a.run();
 			}
