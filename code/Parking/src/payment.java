@@ -76,6 +76,9 @@ public class payment {
 						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
 								welcome.bookinglist.get(i).getPaidStatus() == true) {
 							paid = true;
+						}else if(welcome.bookinglist.get(i).getCancelledStatus() == false && welcome.bookinglist.get(i).getCompletedStatus() == false &&
+								welcome.bookinglist.get(i).getPaidStatus() == false) {
+								welcome.setBooking(welcome.bookinglist.get(i));
 						}
 					}else {
 						found = false;

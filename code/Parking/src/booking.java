@@ -8,9 +8,10 @@ public class booking {
 	private LocalDateTime bookingTime;
 	private LocalDateTime expiryTime;
 	private String plateNum;
-	private boolean paid = false;
+	private boolean paid = false; // for admin
 	private boolean cancelled = false;
 	private boolean completed = false;
+	private boolean paymentPending = false; // for customer
 	
 	
 	public booking(userAccount user, LocalDateTime bookingTime, LocalDateTime expiryTime, String plateNum, Space space) {
@@ -21,6 +22,7 @@ public class booking {
 		this.plateNum = plateNum;
 		this.space = space;
 		this.bookingId = getString();
+		
 	}
 	
 	
@@ -35,6 +37,16 @@ public class booking {
         String saltStr = salt.toString();
         return saltStr;
     }
+	
+	//customer paid but not verified by admin yet
+	public boolean customerPaidstatus() {
+		return paymentPending;
+	}
+	
+	//customer paid but not verified by admin yet
+	public void setcustomerPaidstatus() {
+		this.paymentPending = true;
+	}
 	
 	public boolean getPaidStatus() {
 		return paid;
@@ -99,8 +111,10 @@ public class booking {
 			status = "Completed";
 		}else if(paid == true) {
 			status = "Paid";
-		}else if(paid == false) {
+		}else if(paid == false && paymentPending ==false) {
 			status = "Unpaid";
+		}else if (paymentPending == true) {
+			status = "Payment pending";
 		}
 		return status;
 	}

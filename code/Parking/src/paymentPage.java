@@ -13,7 +13,7 @@ public class paymentPage {
 	
 	public paymentPage() {
 		frame = new JFrame();
-		frame.setTitle("PAYMENT METHOD");
+		frame.setTitle("SELECT PAYMENT");
 		frame.setBounds(900, 500, 450, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -23,9 +23,8 @@ public class paymentPage {
 		JButton paypal = new JButton("PAYPAL");
 		paypal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				paid p = new paid();
+				new paymentInfo();
 				frame.dispose();
-
 			}
 		});
 		paypal.setBounds(170, 70, 117, 29);
@@ -34,9 +33,8 @@ public class paymentPage {
 		JButton credit = new JButton("CREDIT CARD");
 		credit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				paid p = new paid();
+				new paymentInfo();
 				frame.dispose();
-
 			}
 		});
 		credit.setBounds(170, 140, 117, 29);
@@ -45,7 +43,7 @@ public class paymentPage {
 		JButton debit = new JButton("DEBIT CARD");
 		debit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				paid p = new paid();
+				new paymentInfo();
 				frame.dispose();
 			}
 		});
