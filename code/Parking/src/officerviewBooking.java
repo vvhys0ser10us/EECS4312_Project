@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -64,14 +66,7 @@ public class officerviewBooking {
 		btnBack.setBounds(6, 6, 117, 29);
 		frame.getContentPane().add(btnBack);
 		
-		JButton btnBooked = new JButton("Check booked space");
-		btnBooked.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				officerViewSpaceID a = new officerViewSpaceID();
-				a.run();
-				
-			}
-		});
+
 
 		
 		email = new JTextField();
@@ -86,9 +81,14 @@ public class officerviewBooking {
 		JButton btnNewButton = new JButton("Check");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				officerViewSpaceID a = new officerViewSpaceID();
-				a.run();
-				frame.dispose();
+				if (email.getText().isEmpty() || !welcome.userList.contains(email.getText()))
+					JOptionPane.showMessageDialog(null, "Check input ");
+				else {
+					officerViewSpaceID a = new officerViewSpaceID(email.getText());
+					a.run();
+					frame.dispose();
+				}
+
 			}
 		});
 		btnNewButton.setBounds(160, 150, 117, 29);

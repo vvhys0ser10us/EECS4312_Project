@@ -10,7 +10,9 @@ import java.awt.event.ActionEvent;
 public class officerViewSpaceID {
 
 	private JFrame frame;
-
+	private String email;
+	private userAccount checkUser;
+	private booking checkBooking;
 	/**
 	 * Launch the application.
 	 */
@@ -28,7 +30,8 @@ public class officerViewSpaceID {
 //	}
 	public void run() {
 		try {
-			officerViewSpaceID window = new officerViewSpaceID();
+			officerViewSpaceID window = new officerViewSpaceID(email);
+
 			window.frame.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -38,7 +41,20 @@ public class officerViewSpaceID {
 	/**
 	 * Create the application.
 	 */
-	public officerViewSpaceID() {
+	public officerViewSpaceID(String email) {
+		this.email=email;
+		for (int i=0;i<welcome.db.size();i++) {
+			if (welcome.db.get(i).getEmail().equals(email)) {
+				checkUser=welcome.db.get(i);
+			}
+			
+		
+		}
+		for (int i=0;i<welcome.bookinglist.size();i++) {
+			if (welcome.bookinglist.get(i).getUser().getEmail().equals(email)) {
+				checkBooking = welcome.bookinglist.get(i);
+			}
+		}
 		initialize();
 	}
 
@@ -55,7 +71,7 @@ public class officerViewSpaceID {
 		lblNewLabel.setBounds(109, 78, 86, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel(welcome.currentUser.getName());
+		JLabel lblNewLabel_1 = new JLabel(checkUser.getName());
 		lblNewLabel_1.setBounds(244, 78, 152, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 		
@@ -63,7 +79,7 @@ public class officerViewSpaceID {
 		lblNewLabel_4.setBounds(109, 106, 61, 16);
 		frame.getContentPane().add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel(welcome.currentBooking.getBookingTime().toString());
+		JLabel lblNewLabel_5 = new JLabel(checkBooking.getBookingTime().toString());
 		lblNewLabel_5.setBounds(244, 106, 206, 16);
 		frame.getContentPane().add(lblNewLabel_5);
 		
@@ -71,7 +87,7 @@ public class officerViewSpaceID {
 		lblNewLabel_6.setBounds(109, 134, 61, 16);
 		frame.getContentPane().add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_7 = new JLabel(welcome.currentBooking.getExpiryTime().toString());
+		JLabel lblNewLabel_7 = new JLabel(checkBooking.getExpiryTime().toString());
 		lblNewLabel_7.setBounds(244, 134, 206, 16);
 		frame.getContentPane().add(lblNewLabel_7);
 		
@@ -79,7 +95,7 @@ public class officerViewSpaceID {
 		lblNewLabel_8.setBounds(109, 190, 105, 16);
 		frame.getContentPane().add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_9 = new JLabel(welcome.currentBooking.getStatusForViewBooking());
+		JLabel lblNewLabel_9 = new JLabel(checkBooking.getStatusForViewBooking());
 		lblNewLabel_9.setBounds(244, 190, 152, 16);
 		frame.getContentPane().add(lblNewLabel_9);
 		
@@ -87,7 +103,7 @@ public class officerViewSpaceID {
 		lblNewLabel_10.setBounds(109, 51, 61, 16);
 		frame.getContentPane().add(lblNewLabel_10);
 		
-		JLabel lblNewLabel_11 = new JLabel(welcome.currentBooking.getspaceId());
+		JLabel lblNewLabel_11 = new JLabel(checkBooking.getspaceId());
 		lblNewLabel_11.setBounds(244, 50, 137, 16);
 		frame.getContentPane().add(lblNewLabel_11);
 		
@@ -106,7 +122,7 @@ public class officerViewSpaceID {
 		lblNewLabel_2.setBounds(109, 162, 86, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel(welcome.currentBooking.getPlateNum());
+		JLabel lblNewLabel_3 = new JLabel(checkBooking.getPlateNum());
 		lblNewLabel_3.setBounds(244, 162, 170, 16);
 		frame.getContentPane().add(lblNewLabel_3);
 	}
