@@ -1,0 +1,43 @@
+Sorry, my microphone's not working.
+Please kindly follow this guide.txt to watch this demo!
+Thanks!
+
+1.admin
+-- add 3 officers and delete 1 (check error msg: email not exist in system)
+
+2.officer 
+--check unername, password (check error msg:not match)
+-- add 4 space delete 1 and add 1(check error msg:id not exist in system)
+
+3.customer 
+-- regist 2 customers
+--check username, password
+--login and book 1 space (check error msg:not exist))
+--viewbooking (unpaid)
+--pay the first booking (check error msg : not exist)
+--select payment(check error msg : info not match)
+--countdown
+--viewbooking (pending)
+--pay again(check erros msg :already paid)
+--logout
+
+4.officer
+--check the sapce (msg: occupied)
+--viewbooking 
+
+5.admin
+--check booking
+--change status
+
+6.customer
+--viewbooking(paid)
+--wait until expire
+--viewbooking(completed)
+--cancel the completed one(check error msg: already completed)
+--book 3 more
+--book 1 more(check error msg: cannot book more)
+--cancel one(check error msg: already cancelled, not exist)
+-- viewbooking (cancelled)
+--and book 1 more
+
+

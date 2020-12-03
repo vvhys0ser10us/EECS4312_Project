@@ -1,0 +1,39 @@
+admin:
+username:admin  passward:123
+add officer
+	Firstname	Lastname	Email			Passward
+	Ken		Zhou		ken@gmail.com		123
+	Jackie		Chan		jackie@gmail.com	456
+	Bill		Gates		bill@gmail.com		123456  (delete)
+
+Space:
+	Id		Address
+	0001		123 road
+	0002		456 road
+	0003		789 road
+	0004		111 road
+	0005		222 road
+
+Customer:
+	Firstname	Lastname	Email			Passward
+	Haoran		Zhou		zhou@gmail.com		111
+	Alex		Chan		alex@gmail.com		222
+
+Booking info:
+	from				to		plate No.
+Haoran  2020-12-12T10:00:00	   2020-12-12T13:00:00	QWE123     (completed)
+Haoran  2020-12-04T08:00:00	   2020-12-12T10:00:00	ASD123      
+Haoran  2020-12-05T13:00:00        2020-12-05T16:00:00	ZXC123     cancel this 
+Haoran  2020-12-06T08:30:00	   2020-12-06T13:30:00	ERT123	   
+Haoran  2020-12-06T18:20:00        2020-12-06T23:20:00  QWE123	   (MAX:3)
+
+Booking ID:
+FQCHLO1S    0001 (completed)	
+WVCVZGZW    0002
+JXIFEJKQ    0003 (cancelled)
+3F33YX4K    0004
+
+Payment info:
+cardnumber: 4966848474352511
+Expiration:01/22
+CVV:000
