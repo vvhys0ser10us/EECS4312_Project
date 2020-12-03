@@ -84,8 +84,9 @@ public class manageSpace {
 					welcome.spaceIDlist.remove(spaceId.getText());
 
 					for (int i=0;i<welcome.spacelist.size();i++) {
-						if (welcome.spacelist.get(i).getId()==spaceId.getText()) {
+						if (welcome.spacelist.get(i).getId().equals(spaceId.getText())) {
 							welcome.spacelist.remove(i);	
+							System.out.println(welcome.spacelist.size());
 						}
 					}
 					JOptionPane.showMessageDialog(null, "Removed");
