@@ -9,8 +9,7 @@ import javax.swing.Timer;
 public class paid {
 	private JFrame frame;
 	private  Timer timer;
-	int counter = 10;
-	
+	int counter = 60;
 	public paid() {
 		frame = new JFrame();
 		frame.setTitle("PAID");
@@ -32,7 +31,7 @@ public class paid {
 		t.setBounds(255, 200, 200, 16);
 		frame.getContentPane().add(t);
 		
-		JLabel s = new JLabel("seconds");
+		JLabel s = new JLabel(" seconds");
 		s.setBounds(270, 200, 200, 16);
 		frame.getContentPane().add(s);
 		
@@ -42,7 +41,6 @@ public class paid {
 	                t.setText(String.valueOf(counter));
 	                counter--;
 	                if (counter < 0) {
-	                    //timer.removeActionListener(this);
 	                      timer.stop();
 	                      welcome.currentBooking.completedStatus();
 	                      welcome.currentBooking.getSpace().setOccupited(false);
@@ -51,11 +49,6 @@ public class paid {
 	            }
 	        });
 	        timer.start();
-		
-		
-		
-	
-		
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
