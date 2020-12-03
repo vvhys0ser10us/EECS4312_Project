@@ -81,7 +81,6 @@ public class adminIn {
 				else if (welcome.officerlist.contains(email.getText())) {
 				a.delete(email.getText());
 				welcome.officerlist.remove(email.getText());
-				a.delete(email.getText());
 				System.out.println(welcome.officerlist);
 				JOptionPane.showMessageDialog(null, "Done");
 				frame.dispose();

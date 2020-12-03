@@ -11,7 +11,7 @@ public void register(officerAccount account) {
 	welcome.officer.add(account);
 }
 public void delete(String email) {
-	for (int i =0;i < welcome.db.size();i++) {
+	for (int i =0;i < welcome.officer.size();i++) {
 		if (welcome.officer.get(i).getEmail().equals(email)) {
 			welcome.officer.remove(i);
 			welcome.officerlist.remove(email);

@@ -119,7 +119,7 @@ public class officerReg {
 					welcome.officerlist.add(email.getText());
 				officerAccount newOff = new officerAccount(firstname.getText(),lastname.getText(),email.getText(),password.getText());
 				officerDB a = new officerDB();
-				a.add_officer(email.getText());
+//				a.add_officer(email.getText());
 				a.register(newOff);				
 				System.out.println(welcome.officer.get(0).getEmail());
 				System.out.println(welcome.officer.get(0).getPassword());
