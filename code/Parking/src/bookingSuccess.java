@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class bookingSuccess {
 	private JFrame frame;
@@ -21,9 +22,14 @@ public class bookingSuccess {
 		Label.setBounds(150, 60, 200, 16);
 		frame.getContentPane().add(Label);
 		
-		JLabel Label1 = new JLabel("BOOKING ID : " + welcome.currentBooking.getBookingId());
+	    JLabel Label1 = new JLabel("BOOKING ID : ");
 		Label1.setBounds(150, 125, 200, 16);
 		frame.getContentPane().add(Label1);
+		
+		JTextArea textArea = new JTextArea(welcome.currentBooking.getBookingId());
+        textArea.setEditable(false);
+        textArea.setBounds(225, 125, 70, 16);
+        frame.getContentPane().add(textArea);
 		
 		JLabel Label2 = new JLabel("Space Number : " + welcome.currentBooking.getspaceId());
 		Label2.setBounds(150, 150, 200, 16);
