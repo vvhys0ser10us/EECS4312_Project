@@ -40,4 +40,6 @@ Thanks!
 -- viewbooking (cancelled)
 --and book 1 more
 
+In case of demo, we set the expiry timer to 60 seconds.
+After 60 seconds, the notification will show up on customer accounts.
 
