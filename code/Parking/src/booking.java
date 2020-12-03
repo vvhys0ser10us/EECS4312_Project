@@ -47,7 +47,9 @@ public class booking {
 	public void setcustomerPaidstatus() {
 		this.paymentPending = true;
 	}
-	
+	public void paidStatusFalse() {
+		this.paid = false;
+	}
 	public boolean getPaidStatus() {
 		return paid;
 	}

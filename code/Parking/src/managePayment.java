@@ -47,15 +47,16 @@ public class managePayment {/////////////////
 					for (int i=0;i<welcome.bookinglist.size();i++){
 						if (welcome.bookinglist.get(i).getUser().getEmail().equals(email.getText()) && welcome.bookinglist.get(i).customerPaidstatus()) {
 							welcome.bookinglist.get(i).paidStatus();
+							JOptionPane.showMessageDialog(null, "The status has been updated to: Paid ");
 						}
 		}
-				JOptionPane.showMessageDialog(null, "The status has been updated to: Paid ");
+				
 				}
 				else JOptionPane.showMessageDialog(null, "Check input ");
 
 			}
 		});
-		paid.setBounds(63, 218, 117, 29);
+		paid.setBounds(63, 265, 117, 29);
 		frame.getContentPane().add(paid);
 		
 		JButton unpaid = new JButton("Unpaid");
@@ -63,17 +64,19 @@ public class managePayment {/////////////////
 			public void actionPerformed(ActionEvent e) {
 				if (!email.getText().isEmpty() && welcome.userList.contains(email.getText())) {
 					for (int i=0;i<welcome.bookinglist.size();i++){
-						if (welcome.bookinglist.get(i).getUser().getEmail().equals(email.getText()) && !welcome.bookinglist.get(i).customerPaidstatus()) {
+						if (welcome.bookinglist.get(i).getUser().getEmail().equals(email.getText()) && welcome.bookinglist.get(i).customerPaidstatus()) {
 							System.out.println(welcome.bookinglist.get(i).getStatusForViewBooking());
+							welcome.bookinglist.get(i).paidStatusFalse();
+							JOptionPane.showMessageDialog(null, "The status has been updated to: Unpaid ");
 						}
 		}
-				JOptionPane.showMessageDialog(null, "The status has been updated to: Unpaid ");
+				
 				}
 				else JOptionPane.showMessageDialog(null, "Check input ");
 
 			}
 		});
-		unpaid.setBounds(268, 218, 117, 29);
+		unpaid.setBounds(268, 265, 117, 29);
 		frame.getContentPane().add(unpaid);
 		
 		JButton btnBack = new JButton("Back");
@@ -88,7 +91,25 @@ public class managePayment {/////////////////
 		btnBack.setBounds(6, 6, 117, 29);
 		frame.getContentPane().add(btnBack);
 		
+
+		
+
+		
+		JButton btnCheck = new JButton("Check");
+		btnCheck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for (int i=0;i<welcome.bookinglist.size();i++){
+					if (welcome.bookinglist.get(i).getUser().getEmail().equals(email.getText())) {
+						System.out.println(welcome.bookinglist.get(i).getStatusForViewBooking());
+						JOptionPane.showMessageDialog(null, welcome.bookinglist.get(i).getStatusForViewBooking());
+					}
+
 	}
-	
-	
+
+			}
+		});
+		btnCheck.setBounds(162, 212, 117, 29);
+		frame.getContentPane().add(btnCheck);
+		
+	}
 }
