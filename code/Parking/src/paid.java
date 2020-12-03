@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,6 +13,8 @@ public class paid {
 	private  Timer timer;
 	int counter = 60;
 	public paid() {
+		LocalDateTime now = LocalDateTime.now().withNano(0);
+		
 		frame = new JFrame();
 		frame.setTitle("PAID");
 		frame.setBounds(900, 500, 450, 500);
@@ -20,8 +24,12 @@ public class paid {
 		frame.setVisible(true);
 		
 		JLabel paymentLabel = new JLabel("Thanks for the payment!");
-		paymentLabel.setBounds(150, 150, 200, 16);
+		paymentLabel.setBounds(150, 100, 200, 16);
 		frame.getContentPane().add(paymentLabel);
+		
+		JLabel paidLabel = new JLabel("Paid at  " + now.toString());
+		paidLabel.setBounds(130, 150, 200, 16);
+		frame.getContentPane().add(paidLabel);
 		
 		JLabel countdown = new JLabel("Parking space expiry in  ");
 		countdown.setBounds(115, 200, 200, 16);
@@ -31,7 +39,7 @@ public class paid {
 		t.setBounds(255, 200, 200, 16);
 		frame.getContentPane().add(t);
 		
-		JLabel s = new JLabel(" seconds");
+		JLabel s = new JLabel("  seconds");
 		s.setBounds(270, 200, 200, 16);
 		frame.getContentPane().add(s);
 		
