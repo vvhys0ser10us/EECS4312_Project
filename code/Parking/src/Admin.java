@@ -91,5 +91,10 @@ public class Admin {
 		password.setBounds(201, 110, 130, 26);
 		frame.getContentPane().add(password);
 		password.setColumns(10);
+		
+		JLabel pwNewLabel = new JLabel("password");
+		pwNewLabel.setBounds(128, 110, 61, 16);
+		frame.getContentPane().add(pwNewLabel);
+		
 	}
 }
