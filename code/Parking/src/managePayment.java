@@ -9,10 +9,7 @@ import javax.swing.JTextField;
 
 public class managePayment {/////////////////
 	private JFrame frame;
-	private JTextField firstname;
-	private JTextField lastname;
 	private JTextField email;
-	private JTextField password;
 	
 	public void run() {
 		try {
@@ -33,83 +30,50 @@ public class managePayment {/////////////////
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Customer First Name");
-		lblNewLabel.setBounds(63, 50, 150, 16);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Customer Last Name");
-		lblNewLabel_1.setBounds(63, 107, 150, 16);
-		frame.getContentPane().add(lblNewLabel_1);
-		
 		JLabel lblNewLabel_2 = new JLabel("Customer Email");
-		lblNewLabel_2.setBounds(63, 167, 150, 16);
+		lblNewLabel_2.setBounds(63, 118, 150, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Parking Space Number");
-		lblNewLabel_3.setBounds(63, 225, 150, 16);
-		frame.getContentPane().add(lblNewLabel_3);
-		
-		firstname = new JTextField();
-		firstname.setBounds(255, 45, 130, 26);
-		frame.getContentPane().add(firstname);
-		firstname.setColumns(10);
-		
-		lastname = new JTextField();
-		lastname.setBounds(255, 100, 130, 26);
-		frame.getContentPane().add(lastname);
-		lastname.setColumns(10);
-		
 		email = new JTextField();
-		email.setBounds(255, 157, 130, 26);
+		email.setBounds(255, 113, 130, 26);
 		frame.getContentPane().add(email);
 		email.setColumns(10);
-		
-		password = new JTextField();
-		password.setBounds(255, 222, 130, 26);
-		frame.getContentPane().add(password);
-		password.setColumns(10);
 		
 		
 		JButton paid = new JButton("Paid");
 		paid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (
-						!firstname.getText().isEmpty()&& 
-						!lastname.getText().isEmpty() &&
-						!email.getText().isEmpty() &&
-						!password.getText().isEmpty() &&
-						firstname.getText().equals(welcome.currentUser.getFirstName()) &&
-						lastname.getText().equals(welcome.currentUser.getLastName()) &&
-						email.getText().equals(welcome.currentUser.getEmail()) &&
-						password.getText().equals(welcome.currentBooking.getspaceId()) 
-						)
+				if (!email.getText().isEmpty() && welcome.userList.contains(email.getText())) {
+					for (int i=0;i<welcome.bookinglist.size();i++){
+						if (welcome.bookinglist.get(i).getUser().getEmail().equals(email.getText()) && welcome.bookinglist.get(i).customerPaidstatus()) {
+							welcome.bookinglist.get(i).paidStatus();
+						}
+		}
 				JOptionPane.showMessageDialog(null, "The status has been updated to: Paid ");
-				else JOptionPane.showMessageDialog(null, "Check input");
+				}
+				else JOptionPane.showMessageDialog(null, "Check input ");
 
 			}
 		});
-		paid.setBounds(63, 275, 117, 29);
+		paid.setBounds(63, 218, 117, 29);
 		frame.getContentPane().add(paid);
 		
 		JButton unpaid = new JButton("Unpaid");
 		unpaid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (
-						!firstname.getText().isEmpty()&& 
-						!lastname.getText().isEmpty() &&
-						!email.getText().isEmpty() &&
-						!password.getText().isEmpty() &&
-						firstname.getText().equals(welcome.currentUser.getFirstName()) &&
-						lastname.getText().equals(welcome.currentUser.getLastName()) &&
-						email.getText().equals(welcome.currentUser.getEmail()) &&
-						password.getText().equals(welcome.currentBooking.getspaceId()) 
-						)
+				if (!email.getText().isEmpty() && welcome.userList.contains(email.getText())) {
+					for (int i=0;i<welcome.bookinglist.size();i++){
+						if (welcome.bookinglist.get(i).getUser().getEmail().equals(email.getText()) && !welcome.bookinglist.get(i).customerPaidstatus()) {
+							System.out.println(welcome.bookinglist.get(i).getStatusForViewBooking());
+						}
+		}
 				JOptionPane.showMessageDialog(null, "The status has been updated to: Unpaid ");
+				}
 				else JOptionPane.showMessageDialog(null, "Check input ");
 
 			}
 		});
-		unpaid.setBounds(250, 275, 117, 29);
+		unpaid.setBounds(268, 218, 117, 29);
 		frame.getContentPane().add(unpaid);
 		
 		JButton btnBack = new JButton("Back");
