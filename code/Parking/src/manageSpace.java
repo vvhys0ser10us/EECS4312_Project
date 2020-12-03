@@ -148,5 +148,15 @@ public class manageSpace {
 		});
 		btnCheck.setBounds(262, 203, 117, 29);
 		frame.getContentPane().add(btnCheck);
+		
+		JButton btnView = new JButton("View Space");
+		btnView.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				spaceOverview a = new spaceOverview();
+				a.run();
+			}
+		});
+		btnView.setBounds(64, 203, 117, 29);
+		frame.getContentPane().add(btnView);
 	}
 }
