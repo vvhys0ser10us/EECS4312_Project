@@ -75,7 +75,7 @@ public class cancellation {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				userWindow a = new userWindow();
+				new userWindow();
 			}
 		});
 		btnBack.setBounds(270, 372, 117, 29);
