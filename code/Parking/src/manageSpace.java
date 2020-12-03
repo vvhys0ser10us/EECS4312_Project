@@ -13,7 +13,7 @@ public class manageSpace {
 	private JFrame frame;
 	private JTextField spaceId;
 	private JTextField address;
-
+	private boolean a;
 	/**
 	 * Launch the application.
 	 */
@@ -80,7 +80,7 @@ public class manageSpace {
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (spaceId.getText().isEmpty()) JOptionPane.showMessageDialog(null, "Enter Id");
-				else if (welcome.spaceIDlist.contains(spaceId.getText())) {
+				else if (welcome.spaceIDlist.contains(spaceId.getText()) && !a) {
 					welcome.spaceIDlist.remove(spaceId.getText());
 
 					for (int i=0;i<welcome.spacelist.size();i++) {
@@ -90,6 +90,7 @@ public class manageSpace {
 					}
 					JOptionPane.showMessageDialog(null, "Removed");
 				}
+				else if (a) JOptionPane.showMessageDialog(null, "Occupied");
 				else JOptionPane.showMessageDialog(null, "No such spaceID");
 			}
 		});
@@ -129,7 +130,7 @@ public class manageSpace {
 		btnCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!spaceId.getText().isEmpty() && welcome.spaceIDlist.contains(spaceId.getText())) {
-				boolean a=false;
+					a=false;
 				for (int i=0;i<welcome.spacelist.size();i++) {
 					if (welcome.spacelist.get(i).getId().equals(spaceId.getText())) {
 						a = welcome.spacelist.get(i).getOccupied();
