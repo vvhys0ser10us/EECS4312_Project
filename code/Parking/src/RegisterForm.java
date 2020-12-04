@@ -56,7 +56,7 @@ public class RegisterForm {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Last Name");
-		lblNewLabel_1.setBounds(63, 162, 61, 16);
+		lblNewLabel_1.setBounds(63, 162, 87, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Email");
