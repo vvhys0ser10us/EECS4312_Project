@@ -60,7 +60,7 @@ public class Admin {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (admin.check(username.getText(), password.getText())) {
+				if (admin.check(username.getText(), new String(password.getPassword()))) {
 					adminC a = new adminC();
 					a.run();
 					frame.dispose();
@@ -68,7 +68,7 @@ public class Admin {
 				else {
 					JOptionPane.showMessageDialog(null, "fail");
 				}
-				System.out.println(admin.check(username.getText(), password.getText()));
+				System.out.println(admin.check(username.getText(), new String (password.getPassword())));
 				
 			}
 		});
