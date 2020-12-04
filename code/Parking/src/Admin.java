@@ -10,7 +10,7 @@ public class Admin {
 	private adminDB admin;
 	private JFrame frame;
 	private JTextField username;
-	private JTextField password;
+	private JPasswordField password;
 
 	/**
 	 * Launch the application.
@@ -87,7 +87,7 @@ public class Admin {
 		btnBack.setBounds(6, 6, 117, 29);
 		frame.getContentPane().add(btnBack);
 		
-		password = new JTextField();
+		password = new JPasswordField();
 		password.setBounds(201, 110, 130, 26);
 		frame.getContentPane().add(password);
 		password.setColumns(10);
