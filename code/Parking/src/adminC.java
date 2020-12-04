@@ -76,7 +76,7 @@ public class adminC {
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				welcome a = new welcome();
+				Admin a = new Admin();
 				frame.dispose();
 				a.run();
 			}
