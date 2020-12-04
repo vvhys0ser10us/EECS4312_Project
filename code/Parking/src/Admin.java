@@ -44,11 +44,12 @@ public class Admin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Admin Login");
 		frame.setBounds(900, 500, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Admin");
+		JLabel lblNewLabel = new JLabel("Username");
 		lblNewLabel.setBounds(128, 77, 61, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
